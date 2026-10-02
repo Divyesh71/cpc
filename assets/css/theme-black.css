@@ -244,3 +244,121 @@ body main .scs-how .scs-step-card p { color: var(--muted); }
 
 /* wide placeholder photos whose subject sits at the far left */
 .ax-img img[src*="proceduresColumn"] { transform: scale(2.1); transform-origin: 6% 35%; object-position: left center; }
+
+/* =====================================================================
+   OUR APPROACH — cinematic band: photo backdrop, editorial numbered rows
+   ===================================================================== */
+body main .apx {
+  position: relative;
+  isolation: isolate;
+  padding: 150px 0 140px;
+  background:
+    linear-gradient(90deg, #050606 0%, rgba(5, 6, 6, .94) 38%, rgba(5, 6, 6, .72) 100%),
+    linear-gradient(180deg, #050606 0%, rgba(5, 6, 6, 0) 22%, rgba(5, 6, 6, 0) 78%, #050606 100%),
+    url("../images/ai-rfa.jpg") 70% center / cover no-repeat;
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}
+body main .apx::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(700px 420px at 12% 20%, rgba(201, 166, 107, .12), transparent 70%);
+}
+.apx-layout { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); gap: 96px; }
+
+/* left: headline block */
+.apx-panel h2 { font-size: clamp(2.4rem, 1.4rem + 2.6vw, 3.9rem); line-height: 1.04; }
+.apx-panel h2 span { display: inline; }
+.apx-lead { font-size: 24px; line-height: 1.35; margin-top: 28px; }
+.apx-goal {
+  margin-top: 40px; padding: 28px 30px;
+  border: 1px solid rgba(201, 166, 107, .28); border-radius: 22px;
+  background: linear-gradient(135deg, rgba(201, 166, 107, .10), rgba(201, 166, 107, .02));
+}
+
+/* right: one glass panel, three editorial rows */
+.apx-steps {
+  gap: 0; padding: 12px 44px;
+  background: rgba(12, 13, 15, .62);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, .10);
+  border-radius: 32px;
+  box-shadow: 0 50px 100px -50px #000;
+}
+.apx-steps::before { display: none; }
+.apx-step { grid-template-columns: 96px minmax(0, 1fr); gap: 8px; align-items: start; padding: 38px 0; }
+.apx-step + .apx-step { border-top: 1px solid rgba(255, 255, 255, .10); }
+.apx-num, .apx-num:nth-child(n) {
+  width: auto; height: auto; margin: -6px 0 0;
+  background: none; box-shadow: none; border-radius: 0;
+  font-family: var(--font-serif); font-weight: 500; font-size: 58px; line-height: 1; letter-spacing: -.03em;
+  color: transparent; -webkit-text-stroke: 1.2px var(--gold);
+  transition: color .3s;
+}
+.apx-step:hover .apx-num { color: var(--gold); }
+.apx-card, .apx-card:hover {
+  padding: 0; background: none; border: 0; border-radius: 0; box-shadow: none; transform: none;
+}
+.apx-ico { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(201, 166, 107, .4); background: none; }
+body main .apx-card h3:not(.x1):not(.x2):not(.x3) { font-family: var(--font-serif); font-weight: 500; font-size: 26px; letter-spacing: -.01em; margin: 0 0 10px; }
+.apx-card p { font-size: 15.5px; line-height: 1.75; }
+
+@media (max-width: 960px) {
+  body main .apx { padding: 88px 0; background-position: 60% center; }
+  .apx-layout { grid-template-columns: 1fr; gap: 48px; }
+  .apx-steps { padding: 4px 24px; border-radius: 24px; }
+  .apx-step { grid-template-columns: 64px minmax(0, 1fr); padding: 28px 0; }
+  .apx-num, .apx-num:nth-child(n) { font-size: 42px; }
+}
+@media (max-width: 560px) {
+  .apx-step { grid-template-columns: 1fr; gap: 12px; text-align: left; }
+  .apx-num, .apx-num:nth-child(n) { justify-self: start; text-align: left; }
+  .apx-card { flex-direction: row; }
+  .apx-ico { display: none; }
+}
+
+/* Approach: numerals removed — rows are title + icon only */
+.apx-num, .apx-num:nth-child(n) { display: none; }
+.apx-step, .apx-step:nth-child(n) { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 560px) { .apx-card { flex-direction: column; } }
+
+/* Approach eyebrow: gold pill badge with glowing dot (replaces the plain dash) */
+.apx-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 9px 20px 9px 16px; margin-bottom: 26px;
+  font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase;
+  color: var(--gold-light);
+  background: linear-gradient(135deg, rgba(201, 166, 107, .16), rgba(201, 166, 107, .04));
+  border: 1px solid rgba(201, 166, 107, .38);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(201, 166, 107, .05), 0 12px 30px -14px rgba(201, 166, 107, .5);
+}
+.apx-eyebrow::before {
+  content: ""; flex: none; width: 8px; height: 8px; margin: 0;
+  border-radius: 50%; background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(201, 166, 107, .2), 0 0 14px 2px rgba(201, 166, 107, .7);
+}
+.apx-eyebrow { width: fit-content; max-width: 100%; justify-self: start; align-self: flex-start; }
+
+/* Pill eyebrow applied to every section label */
+.hero .eyebrow, .treatments .eyebrow, .additional .eyebrow, .scs-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  width: fit-content; max-width: 100%;
+  padding: 9px 20px 9px 16px; margin-bottom: 26px;
+  font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; line-height: 1.4;
+  color: var(--gold-light);
+  background: linear-gradient(135deg, rgba(201, 166, 107, .16), rgba(201, 166, 107, .04));
+  border: 1px solid rgba(201, 166, 107, .38);
+  border-radius: 999px;
+  box-shadow: 0 0 0 4px rgba(201, 166, 107, .05), 0 12px 30px -14px rgba(201, 166, 107, .5);
+}
+.hero .eyebrow::before, .treatments .eyebrow::before, .additional .eyebrow::before, .scs-eyebrow::before,
+body main section.additional .ax-head .eyebrow::before, .tf-intro .eyebrow::before {
+  content: ""; flex: none; width: 8px; height: 8px; margin: 0;
+  border-radius: 50%; background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(201, 166, 107, .2), 0 0 14px 2px rgba(201, 166, 107, .7);
+}
+@media (max-width: 560px) {
+  .hero .eyebrow, .treatments .eyebrow, .additional .eyebrow, .scs-eyebrow, .apx-eyebrow { letter-spacing: .14em; font-size: 11px; padding: 8px 14px 8px 12px; }
+}
+body main .hero .eyebrow, body main .treatments .eyebrow, body main .additional .eyebrow, body main .scs-eyebrow, body main .apx-eyebrow { color: var(--gold-light); }
