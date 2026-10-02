@@ -220,3 +220,27 @@ body main .scs-how .scs-steps li:nth-child(n) .scs-num { background: var(--gold)
 body main .scs-how .scs-step-card h3, body main .scs-how .scs-step-card h3:not(.x1) { color: var(--ink); }
 body main .scs-how .scs-step-card p { color: var(--muted); }
 .scs-arrow svg, .scs-go { background: var(--surface-2); color: var(--gold); }
+
+/* ---------- Photographic CTA visual (temporary placeholder photos) ---------- */
+.cta2-visual img, .cta2-cand .cta2-visual img {
+  right: 0; top: 0; height: 100%; width: 50%;
+  object-fit: cover; object-position: center 35%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 48%);
+  mask-image: linear-gradient(to right, transparent 0, #000 48%);
+  opacity: .9;
+}
+.cta2-card { overflow: hidden; }
+.tb-feature img { object-position: 50% 40%; }
+.hero-media img { object-position: 50% 30%; }
+.scs-hero-img img { object-fit: cover; object-position: 50% 30%; }
+.ax-img img, .scs-step-card img, .scs-stage-img { object-fit: cover; }
+@media (max-width: 960px) {
+  .cta2-visual img, .cta2-cand .cta2-visual img {
+    width: 100%; right: 0; transform: none; top: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 55%);
+    mask-image: linear-gradient(to bottom, transparent 0, #000 55%);
+  }
+}
+
+/* wide placeholder photos whose subject sits at the far left */
+.ax-img img[src*="proceduresColumn"] { transform: scale(2.1); transform-origin: 6% 35%; object-position: left center; }
