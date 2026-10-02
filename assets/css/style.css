@@ -1,44 +1,45 @@
 /* California Pain Consultants — staging styles (navigation + base) */
 :root {
   /* ---------- brand & theme colors ---------- */
-  --color-primary: #0A7083;
+  --color-primary: #0077B6;
   /* buttons, number badges, checkmark circles */
-  --color-primary-hover: #085A6A;
+  --color-primary-hover: #005F92;
   /* button hover */
-  --color-primary-rgb: 10, 112, 131;
-  --color-primary-line: #2BA3B8;
+  --color-primary-rgb: 0, 119, 182;
+  --color-primary-line: #3A9ACF;
   /* light outline for primary button on dark teal */
-  --color-header-bg: #062F38;
+  --color-header-bg: #03304D;
   /* header + mobile menu */
-  --color-footer-bg: #04252C;
+  --color-footer-bg: #02263D;
   /* footer */
   --teal: var(--color-primary);
   --sage: var(--color-primary);
-  --brand: #3EDBF0;
-  --brand-dark: #22C5DC;
+  --brand: #4DB3E6;
+  --brand-dark: #2A9AD6;
   /* hover fill */
-  --brand-deep: #064E59;
+  --brand-deep: #03304D;
   /* dark teal for text on light tints */
-  --brand-ink: #0A7083;
+  --brand-ink: #0077B6;
   /* readable cyan-teal for small text on white */
-  --brand-tint: #E3F8FB;
+  --brand-tint: #E3F1FA;
 
   /* ---------- neutrals ---------- */
   --navy: #0A0A0A;
   --dark: #000000;
   --white: #FFFFFF;
-  --offwhite: #F7F8F6;
-  --ink: #0B1B2B;
+  --offwhite: #FAF8F4;
+  --ink: #03304D;
   --text: #17212B;
   --slate: #4A5B6A;
   --muted: #5E6B75;
-  --border: #DCE3E5;
-  --hairline: #E3EBEE;
+  --border: #E6E1D6;
+  --hairline: #ECE7DC;
   --shadow-lift: 0 24px 60px -24px rgba(8, 40, 56, .28), 0 4px 14px rgba(8, 40, 56, .06);
 
   /* ---------- typography ---------- */
-  --font-head: "Manrope", "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-body: "Inter", "Source Sans 3", system-ui, sans-serif;
+  --font-head: "DM Sans", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+  --gold: #C8873A;
   /* type scale (fluid, ≈1.25 ratio) */
   --fs-h1: clamp(2.5rem, 1.7rem + 3vw, 4rem);
   /* 40 → 64 */
@@ -2564,7 +2565,7 @@ html:not(.js) .faq-a-inner {
    PREMIUM REFRESH — Advanced Treatments
    ===================================================================== */
 .treatments {
-  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
   background: linear-gradient(180deg, #FBFDFD 0%, #F1F7F9 100%);
   padding: 72px 0 128px;
 }
@@ -3419,7 +3420,7 @@ html:not(.js) .faq-a-inner {
    PREMIUM REFRESH — Meet the Physician
    ===================================================================== */
 .physician {
-  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
   position: relative;
   overflow: hidden;
   padding-block: 112px;
@@ -3563,19 +3564,19 @@ html:not(.js) .faq-a-inner {
 }
 
 .phys-points li:nth-child(1) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z'/%3E%3Cpath d='M8.5 12l2.5 2.5 4.5-5'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3z'/%3E%3Cpath d='M8.5 12l2.5 2.5 4.5-5'/%3E%3C/svg%3E");
 }
 
 .phys-points li:nth-child(2) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 9l10-5 10 5-10 5L2 9z'/%3E%3Cpath d='M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 9l10-5 10 5-10 5L2 9z'/%3E%3Cpath d='M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5'/%3E%3C/svg%3E");
 }
 
 .phys-points li:nth-child(3) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20V13M10 20V8M16 20v-5M22 20H2M17 4l3 3-3 3'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 20V13M10 20V8M16 20v-5M22 20H2M17 4l3 3-3 3'/%3E%3C/svg%3E");
 }
 
 .phys-points li:nth-child(4) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20s-7-4.4-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.600-7 10-7 10z'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 20s-7-4.4-7-10a4 4 0 017-2.5A4 4 0 0119 10c0 5.600-7 10-7 10z'/%3E%3C/svg%3E");
 }
 
 /* buttons */
@@ -4001,7 +4002,7 @@ html:not(.js) .faq-a-inner {
    PREMIUM REFRESH — FAQ
    ===================================================================== */
 .faq {
-  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
   position: relative;
   overflow: hidden;
   padding-block: 104px;
@@ -4113,7 +4114,7 @@ html:not(.js) .faq-a-inner {
   width: 64px;
   height: 64px;
   border-radius: 20px;
-  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5h16v11H9l-5 4V5z'/%3E%3Cpath d='M10 9.500a2 2 0 114 0c0 1.500-2 1.500-2 3M12 14.800v.2'/%3E%3C/svg%3E") center / 30px no-repeat;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 5h16v11H9l-5 4V5z'/%3E%3Cpath d='M10 9.500a2 2 0 114 0c0 1.500-2 1.500-2 3M12 14.800v.2'/%3E%3C/svg%3E") center / 30px no-repeat;
   box-shadow: var(--shadow-lift);
 }
 
@@ -4193,31 +4194,31 @@ html:not(.js) .faq-a-inner {
 }
 
 .faq-item:nth-child(1) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='5' width='17' height='15' rx='2.5'/%3E%3Cpath d='M8 3v4M16 3v4M3.5 10h17'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='5' width='17' height='15' rx='2.5'/%3E%3Cpath d='M8 3v4M16 3v4M3.5 10h17'/%3E%3C/svg%3E");
 }
 
 .faq-item:nth-child(2) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='7' width='17' height='13' rx='2.5'/%3E%3Cpath d='M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2M12 10.5v6M9 13.5h6'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.5' y='7' width='17' height='13' rx='2.5'/%3E%3Cpath d='M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2M12 10.5v6M9 13.5h6'/%3E%3C/svg%3E");
 }
 
 .faq-item:nth-child(3) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='8' r='3.2'/%3E%3Cpath d='M3 20c0-3.5 2.7-6 6-6s6 2.500 6 6M16 5a3 3 0 010 6M18 14.500c1.800.700 3 2.500 3 5.500'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='9' cy='8' r='3.2'/%3E%3Cpath d='M3 20c0-3.5 2.7-6 6-6s6 2.500 6 6M16 5a3 3 0 010 6M18 14.500c1.800.700 3 2.500 3 5.500'/%3E%3C/svg%3E");
 }
 
 .faq-item:nth-child(4) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3.500h8l4 4V20a1 1 0 01-1 1H6a1 1 0 01-1-1V4.500a1 1 0 011-1z'/%3E%3Cpath d='M14 3.500V8h4M8.500 12.500h7M8.500 16h7'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 3.500h8l4 4V20a1 1 0 01-1 1H6a1 1 0 01-1-1V4.500a1 1 0 011-1z'/%3E%3Cpath d='M14 3.500V8h4M8.500 12.500h7M8.500 16h7'/%3E%3C/svg%3E");
 }
 
 .faq-item:nth-child(5) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M12 3v2.500M12 18.500V21M3 12h2.500M18.500 12H21M5.600 5.600l1.800 1.800M16.600 16.600l1.800 1.800M18.400 5.600l-1.800 1.800M7.400 16.600l-1.800 1.800'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3Cpath d='M12 3v2.500M12 18.500V21M3 12h2.500M18.500 12H21M5.600 5.600l1.800 1.800M16.600 16.600l1.800 1.800M18.400 5.600l-1.800 1.800M7.400 16.600l-1.800 1.800'/%3E%3C/svg%3E");
 }
 
 .faq-item:nth-child(6) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s-6.500-6-6.500-11a6.500 6.500 0 0113 0c0 5-6.500 11-6.500 11z'/%3E%3Ccircle cx='12' cy='10' r='2.300'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s-6.500-6-6.500-11a6.500 6.500 0 0113 0c0 5-6.500 11-6.500 11z'/%3E%3Ccircle cx='12' cy='10' r='2.300'/%3E%3C/svg%3E");
 }
 
 .faq-item:nth-child(7) {
-  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230A6C7A' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.500' y='5' width='17' height='15' rx='2.500'/%3E%3Cpath d='M8 3v4M16 3v4M3.500 10h17M9 15l2 2 4-4'/%3E%3C/svg%3E");
+  --ico: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230077B6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3.500' y='5' width='17' height='15' rx='2.500'/%3E%3Cpath d='M8 3v4M16 3v4M3.500 10h17M9 15l2 2 4-4'/%3E%3C/svg%3E");
 }
 
 @media (max-width: 1100px) {
@@ -4294,7 +4295,7 @@ html:not(.js) .faq-a-inner {
 .conditions,
 .duo,
 .final-cta {
-  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
 }
 
 .additional .section-head,
@@ -4481,7 +4482,7 @@ html:not(.js) .faq-a-inner {
    TREATMENT PAGE — Spinal Cord Stimulation (shared by treatments/*.html)
    ===================================================================== */
 .tx-page main {
-  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
 }
 
 .txp-eyebrow {
@@ -4756,7 +4757,7 @@ html:not(.js) .faq-a-inner {
   padding: 56px;
   border-radius: 28px;
   color: #fff;
-  background: linear-gradient(110deg, #04262F 0%, #064E59 60%, #0A6C7A 100%);
+  background: linear-gradient(110deg, #04262F 0%, #064E59 60%, #0077B6 100%);
   box-shadow: var(--shadow-lift);
 }
 
@@ -4890,7 +4891,12 @@ body {
 .brand-logo,
 .is-scrolled .brand-logo {
   height: 46px;
-  filter: brightness(200%) saturate(0%);
+  filter: none;
+  /* original logo, unaltered — white plate keeps its gray/green legible on the dark header */
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 10px;
+  box-sizing: content-box;
 }
 
 .nav-link {
@@ -5131,13 +5137,13 @@ body {
   padding: 12px;
   border-radius: 14px;
   background: var(--brand-tint);
-  color: #0A7083;
+  color: #0077B6;
   flex: none;
 }
 
 .strip-num {
   margin-bottom: 5px;
-  color: #0A7083;
+  color: #0077B6;
 }
 
 .strip-title {
@@ -5564,7 +5570,7 @@ body {
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, .9);
-  color: #0A7083;
+  color: #0077B6;
   box-shadow: none;
   border: 1px solid rgba(255, 255, 255, .6);
 }
@@ -6682,7 +6688,7 @@ body {
 
 .ts-card:hover {
   transform: translateY(-4px);
-  border-color: var(--brand, #0A6C7A);
+  border-color: var(--brand, #0077B6);
 }
 
 .ts-img {
@@ -6734,7 +6740,7 @@ body {
   align-items: center;
   gap: 8px;
   font: 700 15px/1 var(--font-head);
-  color: var(--brand-ink, #0A7083);
+  color: var(--brand-ink, #0077B6);
   text-decoration: none;
 }
 
@@ -6777,7 +6783,7 @@ body {
 
 .tx-dot[aria-current="true"] {
   width: 32px;
-  background: var(--brand, #0A6C7A);
+  background: var(--brand, #0077B6);
 }
 
 .tx-btns {
@@ -6800,8 +6806,8 @@ body {
 }
 
 .tx-btn:hover {
-  background: var(--brand, #0A6C7A);
-  border-color: var(--brand, #0A6C7A);
+  background: var(--brand, #0077B6);
+  border-color: var(--brand, #0077B6);
   color: #fff;
 }
 
@@ -7292,7 +7298,7 @@ body {
    SPINAL CORD STIMULATION PAGE — redesign (scoped to .scs)
    ===================================================================== */
 .scs {
-  --font-serif: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
   background: #fff;
 }
 
@@ -7881,7 +7887,7 @@ body {
 .scs-journey {
   position: relative;
   padding: 104px 0 112px;
-  background: #F4F9FB url("../images/scs-journey-bg.svg") center / cover no-repeat;
+  background: #edf6fd;
 }
 
 .scs-journey .scs-head-center h2 {
@@ -8378,7 +8384,7 @@ body main h1:not(.x1):not(.x2):not(.x3) {
 }
 
 body main h2:not(.x1):not(.x2):not(.x3) {
-  font-family: var(--font-serif, "Newsreader", "Iowan Old Style", Georgia, serif);
+  font-family: var(--font-serif, "Fraunces", "Iowan Old Style", Georgia, serif);
   font-size: var(--fs-h2);
   font-weight: 800;
   line-height: 1.1;
@@ -8387,7 +8393,7 @@ body main h2:not(.x1):not(.x2):not(.x3) {
 }
 
 body main h3:not(.x1):not(.x2):not(.x3) {
-  font-family: var(--font-serif, "Newsreader", "Iowan Old Style", Georgia, serif);
+  font-family: var(--font-serif, "Fraunces", "Iowan Old Style", Georgia, serif);
   font-size: var(--fs-h3);
   font-weight: 700;
   line-height: 1.2;
@@ -8603,16 +8609,16 @@ body main :is(h1, h2, h3, h4, h5, h6):not(.x1):not(.x2):not(.x3) {
   }
 }
 
-/* ---- Treatment carousel: active dot + hovered arrow use #2BA3B8 ---- */
+/* ---- Treatment carousel: active dot + hovered arrow use #2A9AD6 ---- */
 .tx-dot[aria-current="true"] {
-  background: #2BA3B8;
+  background: #2A9AD6;
 }
 
 .treatments .tx-card:hover .learn-more span,
 .treatments .learn-more:hover span,
 .additional .ad-card:hover .learn-more span,
 .additional .learn-more:hover span {
-  background: #2BA3B8;
+  background: #2A9AD6;
   color: #fff;
 }
 
@@ -8641,7 +8647,7 @@ body main :is(h1, h2, h3, h4, h5, h6):not(.x1):not(.x2):not(.x3) {
 
 .ts-card:hover .ts-link span,
 .ts-link:hover span {
-  background: #2BA3B8;
+  background: #2A9AD6;
   color: #fff;
   transform: translateX(3px);
 }
@@ -8939,7 +8945,7 @@ body main :is(.section, .treatments, .additional, .approach, .final-cta, .scs-se
   height: 32px;
   border-radius: 50%;
   background: var(--brand-tint, #E3F4F8);
-  color: var(--brand-ink, #0A6C7A);
+  color: var(--brand-ink, #0077B6);
   transition: background-color .2s, color .2s;
 }
 
@@ -8949,7 +8955,7 @@ body main :is(.section, .treatments, .additional, .approach, .final-cta, .scs-se
 }
 
 .tf-card:hover>span[aria-hidden] {
-  background: #2BA3B8;
+  background: #2A9AD6;
   color: #fff;
 }
 
@@ -8989,4 +8995,149 @@ body main :is(.section, .treatments, .additional, .approach, .final-cta, .scs-se
   .tf-card:hover {
     transform: none;
   }
+}
+
+/* ===== Additional Treatments — card grid (final) ===== */
+body main section.additional { background: linear-gradient(180deg, #FAF8F4, #F3F8F8); }
+body main section.additional .ax-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; margin-bottom: 40px; }
+body main section.additional .ax-head .eyebrow { display: inline-flex; align-items: center; gap: 12px; }
+body main section.additional .ax-head .eyebrow::before { content: ""; width: 36px; height: 2px; background: var(--gold); }
+body main section.additional .ax-head h2 { margin: 14px 0 18px; max-width: 16ch; }
+body main section.additional .ax-head .section-intro { margin: 0; max-width: 54ch; }
+.ax-viewall { flex: none; display: inline-flex; align-items: center; gap: 10px; padding: 13px 26px; border: 1.5px solid #BCDCEF; border-radius: 999px; background: #fff; color: var(--brand-ink); font: 700 15px/1 var(--font-head); text-decoration: none; box-shadow: 0 10px 24px -18px rgba(3,48,77,.5); transition: border-color .2s, transform .2s; }
+.ax-viewall svg { width: 16px; height: 16px; }
+.ax-viewall:hover { border-color: var(--color-primary); transform: translateY(-2px); }
+.ax-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+.ax-grid li { display: flex; }
+.ax-card { position: relative; display: flex; flex-direction: column; width: 100%; padding: 8px 8px 52px; background: #fff; border: 1px solid var(--hairline); border-radius: 16px; color: inherit; text-decoration: none; box-shadow: 0 1px 2px rgba(3,48,77,.04), 0 16px 30px -24px rgba(3,48,77,.4); transition: transform .25s, box-shadow .25s, border-color .25s; }
+.ax-card:hover, .ax-card:focus-visible { transform: translateY(-4px); border-color: #BCDCEF; box-shadow: 0 22px 40px -24px rgba(3,48,77,.5); }
+.ax-img { display: block; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: #0B2233; }
+.ax-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.ax-card:hover .ax-img img { transform: scale(1.05); }
+.ax-body { display: block; padding: 16px 10px 0; }
+.ax-body h3 { margin: 0 0 6px; font: 700 16.5px/1.3 var(--font-head); color: var(--ink); }
+.ax-body p { margin: 0; font-size: 14px; line-height: 1.55; color: #34454F; }
+.ax-go { position: absolute; right: 14px; bottom: 14px; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #E3F1FA; color: var(--brand-ink); transition: background-color .2s, color .2s; }
+.ax-go svg { width: 15px; height: 15px; }
+.ax-card:hover .ax-go { background: var(--color-primary); color: #fff; }
+.ax-other { padding: 28px 24px; background: #E8F3FA; border-color: #D3E6F3; box-shadow: none; justify-content: center; }
+.ax-ico { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #fff; color: var(--brand-ink); box-shadow: 0 8px 18px -10px rgba(3,48,77,.5); margin-bottom: 18px; }
+.ax-ico svg { width: 24px; height: 24px; }
+.ax-other .ax-body { padding: 0; }
+@media (max-width: 1100px) { .ax-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 720px) {
+  body main section.additional .ax-head { flex-direction: column; gap: 22px; }
+  body main section.additional .ax-head h2 { max-width: none; }
+  .ax-grid { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .ax-card, .ax-card:hover { transition: none; transform: none; } .ax-img img { transition: none; } }
+
+/* ===== Additional Treatments — match reference (sans heading, full-bleed card images) ===== */
+body main section.additional .ax-head h2 { font-family: var(--font-head); font-weight: 800; font-size: clamp(30px, 3.2vw, 42px); line-height: 1.12; letter-spacing: -.02em; color: #0B2A4A; max-width: 28ch; }
+body main section.additional .ax-head h2 .aw-em { color: #0F6FB5; }
+body main section.additional .ax-head .eyebrow::before { background: #0B2A4A; width: 28px; }
+.ax-card { padding: 0 0 52px; overflow: hidden; border-radius: 14px; }
+.ax-img { border-radius: 14px 14px 0 0; aspect-ratio: 16 / 8.5; }
+.ax-body { padding: 16px 20px 0; }
+.ax-body h3 { font-size: 15.5px; color: #0B2A4A; }
+.ax-go { right: 16px; bottom: 14px; background: #E3F0FB; color: #0F6FB5; }
+.ax-card:hover .ax-go { background: #0F6FB5; }
+.ax-viewall { color: #0F6FB5; border-color: #D5E6F4; }
+.ax-other { padding: 28px 22px; background: #EAF3FA; border-color: #DCE9F3; }
+.ax-ico { color: #0F6FB5; }
+
+/* Additional Treatments — plain white background */
+body main section.additional { background: #fff; }
+#additional-treatments::before { display: none; }
+
+/* ===== Header — white background, original logo (final) ===== */
+body .site-header, body .site-header.is-scrolled {
+  background: #fff;
+  border-bottom: 1px solid var(--hairline);
+  box-shadow: 0 6px 24px -16px rgba(3, 48, 77, .35);
+}
+body .site-header .brand-logo, body .site-header.is-scrolled .brand-logo {
+  background: none; padding: 0; border-radius: 0; filter: none; box-sizing: border-box;
+}
+body .site-header .nav-link, body .site-header .dd-toggle, body .site-header .icon-btn { color: #03304D; }
+body .site-header .nav-link:hover, body .site-header .has-dropdown:hover > .nav-item .nav-link,
+body .site-header .nav-link[aria-current="page"], body .site-header .dd-toggle:hover { color: var(--color-primary); text-decoration-color: var(--color-primary); }
+body .site-header .icon-btn:hover { background: #E3F1FA; }
+body .site-header .btn-primary { background: var(--color-primary); color: #fff; box-shadow: 0 10px 22px -12px rgba(0, 119, 182, .6); }
+body .site-header .btn-primary:hover { background: var(--color-primary-hover); color: #fff; }
+body .site-header .btn-outline { background: transparent; color: #03304D; border-color: #BCDCEF; }
+body .site-header .btn-outline:hover { background: #E3F1FA; border-color: var(--color-primary); color: #03304D; }
+body .site-header :focus-visible { outline-color: var(--color-primary); box-shadow: 0 0 0 4px rgba(0, 119, 182, .25); }
+@media (max-width: 1200px) {
+  body .site-header .menu-list { background: #fff; }
+  body .site-header .menu-list > li { border-bottom-color: var(--hairline); }
+  body .site-header .nav-link, body .site-header .has-dropdown:hover > .nav-item .nav-link,
+  body .site-header .dropdown-list strong, body .site-header .menu-call .btn { color: #03304D; }
+  body .site-header .dropdown-list a:hover { background: #E3F1FA; }
+}
+
+/* header nav list: no dark fill on desktop (was leaving a teal block behind white header) */
+body .site-header .menu-list { background: transparent; }
+@media (max-width: 1200px) { body .site-header .menu-list { background: #fff; } }
+
+/* Additional Treatments — theme (teal) colors */
+body main section.additional .ax-head h2 { color: var(--ink); }
+body main section.additional .ax-head h2 .aw-em { color: var(--color-primary); }
+body main section.additional .ax-head .eyebrow::before { background: var(--gold); }
+.ax-viewall { background: var(--color-primary); border-color: var(--color-primary); color: #fff; box-shadow: 0 10px 22px -12px rgba(0, 119, 182, .6); }
+.ax-viewall:hover { background: var(--color-primary-hover); border-color: var(--color-primary-hover); }
+.ax-body h3 { color: var(--ink); }
+.ax-go { background: #E3F1FA; color: var(--color-primary); }
+.ax-card:hover .ax-go { background: var(--color-primary); color: #fff; }
+.ax-other { background: #E8F3FA; border-color: #D3E6F3; }
+.ax-ico { color: var(--color-primary); }
+
+/* ===== Final CTA — rounded wave card with image (reference style) ===== */
+body main section.final-cta.cta2 { background: #edf6fd; padding: 56px 0 72px; }
+body main section.final-cta.cta2::before, body main section.final-cta.cta2::after { display: none; }
+.cta2-card { position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); align-items: center; min-height: 260px; border-radius: 28px; overflow: hidden; background: #F3F9FA url("../images/bg-treatments-wave.png") center / cover no-repeat; border: 1px solid #E1EEF0; box-shadow: 0 24px 50px -32px rgba(3, 48, 77, .45); }
+.cta2-copy { position: relative; z-index: 1; padding: 48px 20px 48px 56px; }
+.cta2-copy h2 { margin: 0 0 12px; font: 800 clamp(28px, 3vw, 38px)/1.15 var(--font-head); letter-spacing: -.02em; color: var(--ink); }
+.cta2-copy h2 .cta-em { color: var(--color-primary); }
+.cta2-copy p { margin: 0 0 26px; max-width: 46ch; font-size: 15.5px; line-height: 1.6; color: #34454F; }
+.cta2 .cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.cta2-btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 28px; border-radius: 999px; font: 700 15px/1 var(--font-head); text-decoration: none; transition: transform .2s, background-color .2s, border-color .2s; }
+.cta2-btn svg { width: 17px; height: 17px; }
+.cta2-primary { background: var(--color-primary); color: #fff; box-shadow: 0 12px 24px -14px rgba(0, 119, 182, .7); }
+.cta2-primary:hover { background: var(--color-primary-hover); transform: translateY(-2px); }
+.cta2-secondary { background: #fff; color: var(--ink); border: 1.5px solid #CFE5E8; box-shadow: 0 10px 22px -16px rgba(3, 48, 77, .4); }
+.cta2-secondary svg { color: var(--color-primary); }
+.cta2-secondary:hover { border-color: var(--color-primary); transform: translateY(-2px); }
+.cta2-visual { position: relative; align-self: stretch; min-height: 260px; }
+.cta2-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 28% 40%; -webkit-mask-image: linear-gradient(to right, transparent 0, #000 38%); mask-image: linear-gradient(to right, transparent 0, #000 38%); }
+@media (max-width: 860px) {
+  .cta2-card { grid-template-columns: 1fr; }
+  .cta2-copy { padding: 36px 26px 8px; }
+  .cta2-visual { min-height: 200px; }
+  .cta2-visual img { -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 40%); mask-image: linear-gradient(to bottom, transparent 0, #000 40%); }
+  .cta2-btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .cta2-btn, .cta2-btn:hover { transition: none; transform: none; } }
+
+/* Final CTA card — provided background image */
+.cta2-card { background: #EAF4FB url("../images/bg-cta-card.png") center / cover no-repeat; }
+
+/* Final CTA — transparent person image anchored right */
+.cta2-visual { position: absolute; inset: 0; min-height: 0; pointer-events: none; }
+.cta2-visual img { position: absolute; top: 0; right: 0; left: auto; width: auto; height: 100%; max-width: none; object-fit: contain; object-position: right center; -webkit-mask-image: none; mask-image: none; }
+@media (max-width: 860px) {
+  .cta2-card { padding-bottom: 220px; }
+  .cta2-visual { inset: auto 0 0 0; height: 220px; }
+  .cta2-visual img { height: 100%; right: 0; -webkit-mask-image: none; mask-image: none; }
+}
+
+/* CTA cards — outlined call button in primary (matches reference) */
+.cta2-secondary { border-color: var(--color-primary); }
+
+/* SCS candidate card — near-square device image, keep it fully visible on the right */
+.cta2-cand .cta2-visual img { right: 24px; height: 108%; top: -4%; object-position: right center; }
+.cta2-cand .cta2-copy { padding-right: 0; max-width: 62%; }
+@media (max-width: 860px) {
+  .cta2-cand .cta2-copy { max-width: none; }
+  .cta2-cand .cta2-visual img { right: 50%; transform: translateX(50%); top: 0; height: 100%; }
 }
