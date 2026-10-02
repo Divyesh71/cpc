@@ -820,3 +820,553 @@ body main .final-cta.cta2-cand { padding-top: var(--sec-pad) !important; }
   overflow: hidden;
 }
 .tb-feature .tb-body p { -webkit-line-clamp: 2; line-clamp: 2; }
+
+/* =====================================================================
+   HOW IT WORKS v3 — crisp, zig-zag step rows
+   The step images are only 356px wide, so they are shown at ~native size (never stretched
+   across a wide card) with the copy beside them.
+   ===================================================================== */
+.scs-how .scs-steps { grid-template-columns: 1fr; gap: 24px; }
+.scs-how .scs-step-card {
+  display: grid;
+  grid-template-columns: 356px minmax(0, 1fr);
+  align-items: center;
+  gap: 56px;
+  padding: 20px 56px 20px 20px;
+  border-radius: 32px;
+  transition: border-color .25s, box-shadow .25s;
+}
+.scs-how .scs-step-card img {
+  width: 356px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 356 / 342;
+  border-radius: 22px;
+  object-fit: cover;
+}
+.scs-how .scs-step-card > div { padding: 0; }
+body main .scs-how .scs-step-card h3:not(.x1):not(.x2):not(.x3) {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: clamp(26px, 2.4vw, 34px);
+  letter-spacing: -.02em;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+.scs-how .scs-step-card p { font-size: 17.5px; line-height: 1.7; max-width: 44ch; color: var(--muted); }
+/* second step flips: image on the right */
+.scs-how .scs-steps li:nth-child(even) .scs-step-card { grid-template-columns: minmax(0, 1fr) 356px; padding: 20px 20px 20px 56px; }
+.scs-how .scs-steps li:nth-child(even) .scs-step-card img { order: 2; }
+.scs-how .scs-steps li:nth-child(even) .scs-num { left: auto; right: 32px; }
+.scs-how .scs-num { width: 56px; height: 56px; font-size: 18px; }
+
+@media (max-width: 960px) {
+  .scs-how .scs-step-card,
+  .scs-how .scs-steps li:nth-child(even) .scs-step-card { grid-template-columns: 1fr; gap: 24px; padding: 20px 20px 28px; border-radius: 28px; }
+  .scs-how .scs-steps li:nth-child(even) .scs-step-card img { order: 0; }
+  .scs-how .scs-steps li:nth-child(even) .scs-num { left: 32px; right: auto; }
+  .scs-how .scs-step-card img { width: 100%; max-width: 356px; }
+  .scs-how .scs-step-card p { font-size: 16.5px; }
+}
+
+/* big faded step numeral fills the open side of each row (replaces the small badge) */
+@media (min-width: 961px) {
+  .scs-how .scs-num {
+    top: 50%;
+    left: auto;
+    right: 64px;
+    width: auto;
+    height: auto;
+    transform: translateY(-50%);
+    display: block;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    color: var(--cream-3);
+    font-size: clamp(110px, 11vw, 168px);
+    line-height: 1;
+    letter-spacing: -.04em;
+    pointer-events: none;
+  }
+  .scs-how .scs-steps li:nth-child(even) .scs-num { right: auto; left: 64px; }
+}
+
+/* both rows: image left, numeral right (zig-zag made the numeral collide with the copy) */
+@media (min-width: 961px) {
+  .scs-how .scs-steps li:nth-child(even) .scs-step-card { grid-template-columns: 356px minmax(0, 1fr); padding: 20px 56px 20px 20px; }
+  .scs-how .scs-steps li:nth-child(even) .scs-step-card img { order: 0; }
+  .scs-how .scs-steps li:nth-child(even) .scs-num { left: auto; right: 64px; }
+}
+
+/* ================= Nav dropdowns (Conditions, Treatments) ================= */
+.dropdown-inner { padding: 14px; box-shadow: 0 30px 70px -30px rgba(var(--rgb-shadow), .4), 0 2px 8px rgba(var(--rgb-shadow), .06); }
+.dd-label {
+  margin: 4px 0 6px;
+  padding: 10px 14px 0;
+  font: 600 11.5px/1 var(--font-body);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.dropdown-list a { border-radius: 12px; }
+.dropdown-list strong { font-weight: 500; font-size: 15px; }
+.dropdown-list a:hover strong, .dropdown-list a:focus-visible strong { color: var(--color-primary); }
+
+@media (min-width: 1201px) {
+  .dropdown-wide { width: 640px; }
+  .dropdown-wide .dropdown-inner { display: grid; grid-template-columns: 1fr 1fr; column-gap: 12px; align-items: start; }
+  .dropdown-wide .dd-label { grid-column: auto; }
+  /* label + list pairs stack in each column */
+  .dropdown-wide .dropdown-inner > .dd-label:nth-of-type(1),
+  .dropdown-wide .dropdown-inner > .dropdown-list:nth-of-type(1) { grid-column: 1; }
+  .dropdown-wide .dropdown-inner > .dd-label:nth-of-type(2),
+  .dropdown-wide .dropdown-inner > .dropdown-list:nth-of-type(2) { grid-column: 2; }
+  .dropdown-wide .dropdown-inner > .dd-label { grid-row: 1; }
+  .dropdown-wide .dropdown-inner > .dropdown-list { grid-row: 2; }
+}
+@media (max-width: 1200px) {
+  .dd-label { padding-left: 0; }
+}
+
+/* =====================================================================
+   HOW IT WORKS v4 — minimal, compact: two open columns, small crisp image + copy,
+   hairline rule above each, faint numeral. (Replaces the tall full-width cards.)
+   ===================================================================== */
+body main .scs-how .scs-how-grid { gap: 40px; }
+body main .scs-how .scs-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 56px; }
+body main .scs-how .scs-steps li:nth-child(n) { border-top: 1px solid var(--cream-3); padding-top: 32px; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card {
+  display: grid;
+  grid-template-columns: 176px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img {
+  order: 0;
+  width: 176px;
+  height: auto;
+  aspect-ratio: 356 / 342;
+  border-radius: 20px;
+}
+body main .scs-how .scs-step-card > div { padding: 0; }
+body main .scs-how .scs-step-card .scs-go { display: none; }
+body main .scs-how .scs-step-card h3:not(.x1):not(.x2):not(.x3) { font-size: 24px; margin: 0 0 8px; }
+body main .scs-how .scs-step-card p { font-size: 16px; line-height: 1.65; max-width: none; }
+/* numeral: small, faint, top-right of each column */
+body main .scs-how .scs-steps li:nth-child(n) .scs-num {
+  top: 24px;
+  right: 0;
+  left: auto;
+  transform: none;
+  font-size: 44px;
+  color: var(--cream-3);
+}
+
+@media (max-width: 960px) {
+  body main .scs-how .scs-steps { grid-template-columns: 1fr; gap: 0; }
+  body main .scs-how .scs-steps li:nth-child(n) { padding: 28px 0; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { grid-template-columns: 150px minmax(0, 1fr); padding: 0; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img { width: 150px; max-width: none; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-num { top: 24px; left: auto; right: 0; font-size: 36px; width: auto; height: auto; background: none; box-shadow: none; }
+}
+@media (max-width: 520px) {
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { grid-template-columns: 1fr; gap: 18px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img { width: 140px; }
+  body main .scs-how .scs-step-card h3:not(.x1):not(.x2):not(.x3) { font-size: 22px; }
+}
+
+/* =====================================================================
+   HOW IT WORKS v5 — editorial split (per reference): faded warm spine behind the copy,
+   thin curved guide line with two nodes, two compact cards (badge · arrow · title · gold rule · text · image)
+   ===================================================================== */
+.scs-how { position: relative; overflow: hidden; isolation: isolate; background: var(--cream); }
+/* faded, warm-toned spine illustration */
+.scs-how::before {
+  display: block;
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("../images/scs-how-bg.webp") 6% center / auto 125% no-repeat;
+  filter: grayscale(1) sepia(.9) saturate(.9) brightness(1.12);
+  opacity: .34;
+  mix-blend-mode: multiply;
+  -webkit-mask-image: radial-gradient(ellipse 38% 70% at 36% 50%, #000 30%, transparent 78%);
+  mask-image: radial-gradient(ellipse 38% 70% at 36% 50%, #000 30%, transparent 78%);
+}
+/* curved guide line + nodes */
+.scs-how::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 27%;
+  top: 10%;
+  width: 34%;
+  height: 82%;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' fill='none'%3E%3Cpath d='M330 40C250 40 140 130 125 290c-8 90-60 170-190 210' stroke='%232E6B3C' stroke-opacity='.35' stroke-width='1.2'/%3E%3Ccircle cx='300' cy='46' r='16' fill='%232E6B3C' fill-opacity='.1'/%3E%3Ccircle cx='300' cy='46' r='8' fill='%232E6B3C'/%3E%3Ccircle cx='122' cy='360' r='16' fill='%232E6B3C' fill-opacity='.1'/%3E%3Ccircle cx='122' cy='360' r='8' fill='%232E6B3C'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+}
+
+@media (min-width: 1201px) {
+  body main .scs-how .scs-how-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7.6fr); gap: 56px; align-items: center; }
+  body main .scs-how .scs-how-copy { display: block; }
+  body main .scs-how .scs-how-copy .scs-eyebrow { margin-bottom: 28px; }
+  body main .scs-how .scs-how-copy h2:not(.x1):not(.x2):not(.x3) { font-size: clamp(3.4rem, 2rem + 3.4vw, 5rem); line-height: 1.02; letter-spacing: -.03em; margin: 0 0 28px; }
+  body main .scs-how .scs-how-intro { font-size: 19px; max-width: 30ch; margin: 0; color: var(--muted); }
+}
+/* the two cards */
+body main .scs-how .scs-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+body main .scs-how .scs-steps li:nth-child(n) { border-top: 0; padding-top: 0; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 176px;
+  align-items: stretch;
+  gap: 20px;
+  min-height: 330px;
+  padding: 24px;
+  background: rgba(255, 255, 255, .78);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 28px;
+  box-shadow: 0 30px 60px -40px rgba(var(--rgb-shadow), .35);
+}
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card > div { grid-column: 1; grid-row: 1; padding: 78px 0 0; align-self: start; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img {
+  grid-column: 2; grid-row: 1;
+  order: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  aspect-ratio: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+body main .scs-how .scs-step-card h3:not(.x1):not(.x2):not(.x3) { font-size: 23px; line-height: 1.2; margin: 0; }
+body main .scs-how .scs-step-card h3::after { content: ""; display: block; width: 34px; height: 2px; margin: 16px 0 14px; background: var(--gold); }
+body main .scs-how .scs-step-card p { font-size: 14.5px; line-height: 1.65; }
+/* number badge (top-left) + arrow (top, beside it) */
+body main .scs-how .scs-steps li:nth-child(n) .scs-num {
+  top: 24px;
+  left: 24px;
+  right: auto;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--brand-tint);
+  color: var(--color-primary);
+  font-size: 19px;
+  letter-spacing: 0;
+  z-index: 3;
+}
+body main .scs-how .scs-step-card .scs-go {
+  display: grid;
+  position: absolute;
+  top: 24px;
+  right: calc(24px + 176px + 20px);
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  color: var(--color-primary);
+  box-shadow: 0 10px 24px -12px rgba(var(--rgb-shadow), .5);
+}
+
+/* tablet: heading row on top, cards below */
+@media (max-width: 1200px) {
+  body main .scs-how .scs-how-copy h2:not(.x1):not(.x2):not(.x3) { font-size: clamp(2.4rem, 1.6rem + 3vw, 3.6rem); }
+  .scs-how::before { background-position: 82% center; -webkit-mask-image: radial-gradient(ellipse 60% 80% at 80% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse 60% 80% at 80% 40%, #000 20%, transparent 75%); }
+  .scs-how::after { display: none; }
+}
+@media (max-width: 760px) {
+  body main .scs-how .scs-steps { grid-template-columns: 1fr; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { min-height: 0; grid-template-columns: minmax(0, 1fr) 120px; padding: 20px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img { min-height: 190px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card > div { padding-top: 72px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-num { top: 20px; left: 20px; width: 50px; height: 50px; }
+  body main .scs-how .scs-step-card .scs-go { top: 20px; right: calc(20px + 120px + 20px); width: 46px; height: 46px; }
+}
+
+/* equal-height cards */
+body main .scs-how .scs-steps { align-items: stretch; }
+body main .scs-how .scs-steps li:nth-child(n) { display: flex; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { flex: 1; }
+
+/* =====================================================================
+   HOW IT WORKS v6 — three clear zones (per annotation): content | spine image | step cards
+   The spine illustration is now its own visible image (not a faded background under the text).
+   ===================================================================== */
+.scs-how::before, .scs-how::after { display: none; }
+.scs-how-media { display: none; margin: 0; }
+
+@media (min-width: 1201px) {
+  body main .scs-how .scs-how-grid { grid-template-columns: minmax(0, 4.4fr) minmax(0, 3.2fr) minmax(0, 6.2fr); gap: 24px; align-items: center; }
+  body main .scs-how .scs-how-copy { grid-column: 1; }
+  body main .scs-how .scs-how-copy h2:not(.x1):not(.x2):not(.x3) { font-size: clamp(3rem, 1.6rem + 3vw, 4.6rem); }
+  body main .scs-how .scs-how-intro { max-width: 28ch; }
+
+  .scs-how-media {
+    display: block;
+    grid-column: 2;
+    position: relative;
+    height: 560px;
+    overflow: hidden;
+    border-radius: 36px;
+  }
+  .scs-how-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 41% center;   /* centre on the spine + stimulator */
+    mix-blend-mode: multiply;      /* white of the artwork melts into the cream background */
+    -webkit-mask-image: radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%);
+  }
+
+  /* cards: stacked, wide, horizontal */
+  body main .scs-how .scs-steps { grid-column: 3; grid-template-columns: 1fr; gap: 20px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { min-height: 250px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card > div { padding-top: 76px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img { min-height: 0; }
+  body main .scs-how .scs-step-card p { font-size: 15px; max-width: 34ch; }
+}
+
+/* =====================================================================
+   HOW IT WORKS — back to the faded warm spine background (v5 look); clear spine figure removed
+   ===================================================================== */
+.scs-how::before, .scs-how::after { display: block; }
+@media (max-width: 1200px) { .scs-how::after { display: none; } }
+@media (min-width: 1201px) {
+  body main .scs-how .scs-how-grid { grid-template-columns: minmax(0, 5fr) minmax(0, 7.6fr); gap: 56px; }
+  body main .scs-how .scs-how-copy h2:not(.x1):not(.x2):not(.x3) { font-size: clamp(3.4rem, 2rem + 3.4vw, 5rem); }
+  body main .scs-how .scs-how-intro { max-width: 30ch; }
+  body main .scs-how .scs-steps { grid-column: auto; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { min-height: 330px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card > div { padding-top: 78px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img { min-height: 280px; }
+  body main .scs-how .scs-step-card p { font-size: 14.5px; max-width: none; }
+}
+
+/* =====================================================================
+   HOW IT WORKS — card layout per annotation: wide IMAGE box on top, CONTENT box below
+   (faded spine background stays as is)
+   ===================================================================== */
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  min-height: 0;
+  padding: 14px;
+  border-radius: 28px;
+}
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img {
+  grid-column: 1; grid-row: 1;
+  width: 100%;
+  height: 168px;
+  min-height: 0;
+  aspect-ratio: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card > div {
+  grid-column: 1; grid-row: 2;
+  padding: 24px 14px 12px;
+}
+body main .scs-how .scs-step-card h3:not(.x1):not(.x2):not(.x3) { font-size: 24px; }
+body main .scs-how .scs-step-card h3::after { margin: 14px 0 12px; }
+body main .scs-how .scs-step-card p { font-size: 15px; max-width: none; }
+/* badge + arrow float over the image corners */
+body main .scs-how .scs-steps li:nth-child(n) .scs-num {
+  top: 28px; left: 28px;
+  width: 48px; height: 48px;
+  font-size: 17px;
+  background: rgba(255, 255, 255, .92);
+  box-shadow: 0 8px 20px -10px rgba(0, 0, 0, .45);
+}
+body main .scs-how .scs-step-card .scs-go {
+  top: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+}
+@media (max-width: 760px) {
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { grid-template-columns: 1fr; padding: 12px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img { height: 190px; min-height: 0; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-step-card > div { padding: 22px 12px 10px; }
+  body main .scs-how .scs-steps li:nth-child(n) .scs-num { top: 24px; left: 24px; width: 44px; height: 44px; }
+  body main .scs-how .scs-step-card .scs-go { top: 24px; right: 24px; width: 44px; height: 44px; }
+}
+
+/* both cards identical height + aligned tops */
+body main .scs-how .scs-steps { align-items: stretch !important; align-content: center; grid-auto-rows: 1fr; }
+body main .scs-how .scs-steps li:nth-child(n) { align-self: stretch; height: auto; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { height: 100%; }
+
+/* How it works: number badges removed */
+body main .scs-how .scs-steps li:nth-child(n) .scs-num { display: none !important; }
+
+/* How it works: arrow buttons removed */
+body main .scs-how .scs-step-card .scs-go { display: none !important; }
+
+/* How it works cards: no hover effect */
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:hover {
+  transform: none;
+  border-color: rgba(255, 255, 255, .9);
+  box-shadow: 0 30px 60px -40px rgba(var(--rgb-shadow), .35);
+}
+
+/* How it works: curved guide line + green dots removed */
+.scs-how::after { display: none !important; }
+
+/* How it works: static — no hover / focus / active effects, no arrows, no transitions */
+.scs-how .scs-step-card,
+.scs-how .scs-step-card *,
+.scs-how .scs-step-card:hover *,
+.scs-how .scs-step-card:focus-within * { transition: none !important; animation: none !important; transform: none !important; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:hover,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:focus-within,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:active {
+  transform: none;
+  border-color: rgba(255, 255, 255, .9);
+  box-shadow: 0 30px 60px -40px rgba(var(--rgb-shadow), .35);
+  outline: none;
+}
+.scs-how .scs-step-card::before, .scs-how .scs-step-card::after,
+.scs-how .scs-steps li::before, .scs-how .scs-steps li::after,
+.scs-how .scs-go, .scs-how .scs-num { display: none !important; }
+.scs-how .scs-step-card { cursor: default; }
+
+/* How it works: hover must not change layout — lock border width/size in every state */
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:hover,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:focus-within {
+  border: 1px solid rgba(255, 255, 255, .9);
+  padding: 14px;
+}
+
+/* How it works: new crisp wide step images (1160px source) */
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card img { height: 190px; object-position: 50% 50%; }
+
+/* expertise cards: all text starts on the same line (top-aligned under the icon), not bottom-aligned */
+@media (min-width: 601px) {
+  ul.pillars > li:nth-child(n) { justify-content: flex-start; gap: 22px; }
+}
+@media (max-width: 960px) {
+  ul.pillars:not(.pillars-3) > li:nth-child(n) { justify-content: flex-start; }
+}
+
+/* =====================================================================
+   HEADER — fit between 1201px and ~1359px (was overflowing: call icon cut off, page scrolled sideways)
+   ===================================================================== */
+html, body { overflow-x: clip; }
+@media (min-width: 1201px) and (max-width: 1359px) {
+  .header-inner { gap: 10px; padding-inline: 16px; }
+  .brand-logo { height: 40px; }
+  .nav-link { font-size: 14px; padding-inline: 6px; }
+  .dd-toggle { width: 22px; margin-left: -8px; }
+  .menu-cta { margin-left: 6px; }
+  .menu-cta .btn { padding: 0 16px; min-height: 44px; font-size: 14px; }
+  .site-header .menu-list > li.menu-call { display: none; }   /* number is in the hero + mobile bar */
+}
+@media (min-width: 1360px) and (max-width: 1500px) {
+  .nav-link { padding-inline: 8px; }
+}
+
+/* wide screens: use the empty space between logo and menu — roomier menu spacing + larger type */
+@media (min-width: 1501px) { .site-header .nav-link { font-size: 15.5px; padding-inline: 14px; } .site-header .dd-toggle { margin-left: -10px; } }
+@media (min-width: 1700px) { .site-header .nav-link { font-size: 16px; padding-inline: 18px; } }
+@media (min-width: 1900px) { .site-header .nav-link { font-size: 16.5px; padding-inline: 22px; } }
+/* keep a clear gap before the Request Appointment button */
+@media (min-width: 1501px) { .site-header .nav-link { padding-inline: 11px; } }
+@media (min-width: 1700px) { .site-header .nav-link { font-size: 15.5px; padding-inline: 12px; } }
+@media (min-width: 1900px) { .site-header .nav-link { font-size: 16px; padding-inline: 16px; } }
+/* 1900px+: the call button is also shown, so keep the menu compact to avoid touching the CTA */
+@media (min-width: 1760px) { .site-header .nav-link { font-size: 15px; padding-inline: 9px; } }
+
+/* 1201–1359px: show the round call icon again (header made compact enough to fit it) */
+@media (min-width: 1201px) and (max-width: 1359px) {
+  .header-inner { gap: 8px; padding-inline: 12px; }
+  .brand-logo { height: 36px; }
+  .nav-link { font-size: 13.5px; padding-inline: 4px; }
+  .dd-toggle { width: 18px; margin-left: -6px; }
+  .menu-cta { margin-left: 2px; }
+  .menu-cta .btn { padding: 0 14px; font-size: 13.5px; }
+  .site-header .menu-cta .btn::after { display: none; }       /* drop the small arrow to save width */
+  .site-header .menu-list > li.menu-call { display: flex; margin-left: 4px; }
+  .site-header .menu-call .btn { width: 44px; min-width: 44px; height: 44px; min-height: 44px; }
+}
+/* 1201–1359px: add breathing room between menu items and before the buttons */
+@media (min-width: 1201px) and (max-width: 1359px) {
+  .header-inner { gap: 14px; }
+  .nav-link { font-size: 14px; padding-inline: 8px; }
+  .menu-cta { margin-left: 14px; }
+  .site-header .menu-list > li.menu-call { margin-left: 8px; }
+}
+/* a little more room again (1201–1359px) */
+@media (min-width: 1201px) and (max-width: 1359px) {
+  .nav-link { padding-inline: 10px; }
+  .menu-cta { margin-left: 22px; }
+  .site-header .menu-list > li.menu-call { margin-left: 12px; }
+}
+
+/* =====================================================================
+   MOBILE MENU — open panel must cover the page
+   backdrop-filter on the header made the fixed menu panel size itself to the 68px header
+   (so only "Home / About" showed and the hero bled through). Solid header + solid panel on mobile.
+   ===================================================================== */
+@media (max-width: 1200px) {
+  body .site-header, body .site-header.is-scrolled {
+    background: var(--cream);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  body .site-header .menu-list {
+    background: var(--cream);
+    border-top: 1px solid var(--hairline);
+  }
+  .menu-list > li { border-bottom-color: var(--hairline); }
+  .nav-link { font-size: 17px; font-weight: 500; }
+  .dropdown-inner { background: transparent; box-shadow: none; border: 0; padding: 0 0 12px 12px; }
+  .dropdown-wide { width: auto; }
+}
+
+/* tablet menu (601–1200px): action buttons are content-width, not full-width; phones keep full-width */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .menu-list > li.menu-cta, .menu-list > li.menu-call { align-self: flex-start; }
+  .menu-cta .btn, .menu-call .btn { width: auto; min-width: 260px; padding: 0 32px; min-height: 50px; }
+  .menu-cta { margin-top: 24px; }
+  .menu-call { margin-top: 12px; }
+}
+
+/* tablet menu: Request Appointment + Call sit side by side in one row */
+@media (min-width: 601px) and (max-width: 1200px) {
+  .menu-list { flex-direction: row; flex-wrap: wrap; align-content: flex-start; column-gap: 12px; }
+  .menu-list > li { flex: 0 0 100%; }
+  .menu-list > li.menu-cta, .menu-list > li.menu-call { flex: 0 0 auto; align-self: auto; margin-top: 24px; }
+  .menu-cta .btn, .menu-call .btn { min-width: 0; padding: 0 28px; }
+}
+
+/* =====================================================================
+   HERO at 961–1200px (small laptop / landscape tablet): more room for copy, buttons on one row
+   ===================================================================== */
+@media (min-width: 961px) and (max-width: 1200px) {
+  .hero-grid, .scs-hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 36px; }
+  .hero-media, .scs-hero-img { height: clamp(500px, 66vh, 640px); border-radius: 36px 0 0 36px; }
+  body main .hero h1:not(.x1):not(.x2):not(.x3),
+  body main .scs-hero h1:not(.x1):not(.x2):not(.x3) { font-size: clamp(2.4rem, 1rem + 4vw, 3.4rem); }
+  .hero .eyebrow, .scs-crumbs { letter-spacing: .12em; font-size: 11.5px; }
+  .hero-actions, .scs-actions { flex-wrap: nowrap; gap: 12px; }
+  .hero .btn, .scs-actions .btn { padding: 0 20px; font-size: 14.5px; min-height: 50px; white-space: nowrap; }
+  .hero-chip { max-width: 300px; }
+}
