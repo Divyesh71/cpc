@@ -1,0 +1,222 @@
+/* California Pain Consultants — "Black Premium" theme layer (STAGING).
+   Loaded AFTER style.css and theme-modern.css. Re-skins colour only; markup, content and layout are untouched.
+   To revert to the cream theme, remove the theme-black.css <link> from each page.
+
+   Direction (rasoulispine.com): near-black canvas, warm-white type, champagne-gold accent,
+   hairline borders, large editorial serif headlines, image-led cards. */
+
+:root {
+  --cream: #08090A;                  /* page canvas */
+  --cream-2: #0F1113;                /* alternate section */
+  --cream-3: #1B1E21;
+  --ink: #F3EFE6;                    /* primary text (light on dark) */
+  --ink-soft: #D8D4CA;
+  --muted: #A5AAA6;
+
+  --surface: #121416;                /* cards */
+  --surface-2: #181B1E;
+  --gold: #C9A66B;
+  --gold-light: #E6CE9C;
+
+  --color-primary: var(--gold);
+  --color-primary-hover: var(--gold-light);
+  --color-primary-line: var(--gold);
+  --color-primary-rgb: 201, 166, 107;
+  --brand: var(--gold-light);
+  --brand-dark: var(--gold);
+  --brand-tint: rgba(201, 166, 107, .12);
+  --brand-ink: var(--gold);
+  --brand-deep: var(--cream);
+
+  --color-footer-bg: #050606;
+  --color-header-bg: #08090A;
+  --navy-soft: var(--surface);
+  --hairline: rgba(255, 255, 255, .10);
+  --border: rgba(255, 255, 255, .10);
+  --bg-page: var(--cream);
+  --bg-tint: var(--cream-2);
+
+  --rgb-brand: 230, 206, 156;
+  --rgb-page: 8, 9, 10;
+  --rgb-shadow: 0, 0, 0;
+  --shadow-lift: 0 30px 70px -30px rgba(0, 0, 0, .8);
+}
+
+html { background: var(--cream); color-scheme: dark; }
+body { background: var(--cream); color: var(--ink); }
+::selection { background: var(--gold); color: #0A0B0C; }
+
+/* ---------- Typography ---------- */
+body main h1:not(.x1):not(.x2):not(.x3),
+body main h2:not(.x1):not(.x2):not(.x3),
+.cta2-copy h2 { color: var(--ink); font-weight: 500; }
+.aw-em, .cta2-copy h2 .cta-em, body main section.additional .ax-head h2 .aw-em, .apx-panel h2 span {
+  color: var(--gold);
+  font-style: italic;
+}
+.hero-sub { color: var(--ink); }
+.hero .eyebrow, .treatments .eyebrow, .additional .eyebrow, .scs-eyebrow, .apx-eyebrow, .scs-crumbs { color: var(--gold); }
+.scs-crumbs a { color: var(--ink-soft); }
+
+/* ---------- Buttons: gold primary, ghost secondary ---------- */
+.btn-primary, .hero .btn-primary, .scs-actions .btn-primary, .mobile-action-bar .btn-primary,
+body .site-header .btn-primary, .ax-viewall, .cta2-primary {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-color: var(--gold);
+  color: #0A0B0C;
+}
+.btn-primary:hover, .hero .btn-primary:hover, .scs-actions .btn-primary:hover, .mobile-action-bar .btn-primary:hover,
+body .site-header .btn-primary:hover, .site-header .btn-primary:hover, .ax-viewall:hover, .cta2-primary:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #0A0B0C;
+  box-shadow: 0 10px 30px -10px rgba(201, 166, 107, .6);
+}
+.btn-outline, .hero .btn-outline, .scs-actions .btn-outline, body .site-header .btn-outline, .cta2-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid rgba(255, 255, 255, .35);
+}
+.btn-outline:hover, .hero .btn-outline:hover, .scs-actions .btn-outline:hover,
+body .site-header .btn-outline:hover, .cta2-secondary:hover {
+  background: rgba(255, 255, 255, .08);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* ---------- Header ---------- */
+body .site-header, body .site-header.is-scrolled {
+  background: rgba(8, 9, 10, .82);
+  border-bottom: 1px solid var(--hairline);
+}
+.brand-logo { filter: brightness(1.12) contrast(1.05); }
+body .site-header .nav-link, body .site-header .dd-toggle, body .site-header .icon-btn { color: var(--ink); }
+body .site-header .nav-link:hover, body .site-header .has-dropdown:hover > .nav-item .nav-link,
+body .site-header .dd-toggle:hover, body .site-header .nav-link[aria-current="page"] {
+  color: var(--gold-light);
+  text-decoration-color: var(--gold);
+}
+body .site-header .icon-btn:hover { background: rgba(255, 255, 255, .08); }
+.dropdown-inner { background: #0E1012; border-color: var(--hairline); box-shadow: 0 30px 70px -20px rgba(0, 0, 0, .9); }
+.dropdown-list a { color: var(--ink); }
+.dropdown-list a:hover { background: rgba(201, 166, 107, .12); color: var(--gold-light); }
+.dd-label { color: var(--gold); }
+@media (max-width: 960px) {
+  body .site-header .menu-list { background: #0A0B0C; border-top: 1px solid var(--hairline); }
+}
+:focus-visible, body .site-header :focus-visible { outline-color: var(--gold); box-shadow: 0 0 0 4px rgba(201, 166, 107, .3); }
+
+/* ---------- Hero ---------- */
+.hero, .scs-hero {
+  background:
+    radial-gradient(900px 520px at 85% 8%, rgba(201, 166, 107, .13), transparent 62%),
+    radial-gradient(700px 420px at 0% 100%, rgba(255, 255, 255, .04), transparent 70%),
+    var(--cream);
+}
+.hero-media {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 50px 100px -40px rgba(0, 0, 0, .95), 0 0 0 1px rgba(201, 166, 107, .08);
+}
+.hero-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8, 9, 10, .55), transparent 45%); pointer-events: none; }
+.hero-chip { z-index: 2; background: rgba(10, 11, 12, .72); border: 1px solid rgba(255, 255, 255, .14); color: var(--muted); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.hero-chip svg { background: var(--gold); color: #0A0B0C; }
+.hero-chip strong { color: var(--ink); }
+.pillars, .pillars li + li, .pillars li:nth-child(n+4) { border-color: var(--hairline); }
+.pillars li { color: var(--ink); }
+.pillars svg { color: var(--gold); }
+
+/* ---------- Sections ---------- */
+#advanced-treatments { background: var(--cream); }
+.additional, body main section.additional { background: var(--cream-2); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
+.hero-intro, .section-intro, .tf-text p, .ax-body p, .apx-card p { color: var(--muted); }
+
+.tb-card a { background: var(--surface); border: 1px solid rgba(255, 255, 255, .08); }
+.tb-card a::after { background: linear-gradient(to top, rgba(5, 6, 6, .94) 0%, rgba(5, 6, 6, .6) 40%, rgba(5, 6, 6, 0) 72%); }
+.tb-card a:hover { border-color: rgba(201, 166, 107, .55); }
+.tb-more { background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .16); }
+.tb-card a:hover .tb-more, .tb-card a:focus-visible .tb-more { background: var(--gold); border-color: var(--gold); color: #0A0B0C; }
+
+.tf-card, .ax-card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, .09);
+}
+.tf-card:hover, .tf-card:focus-visible, .ax-card:hover, .ax-card:focus-visible {
+  border-color: rgba(201, 166, 107, .6);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9), 0 0 0 1px rgba(201, 166, 107, .15);
+}
+.ax-img img { filter: saturate(.92) brightness(.95); }
+.tf-text h3, .ax-body h3 { color: var(--ink); }
+.tf-card > span[aria-hidden], .ax-go { background: rgba(255, 255, 255, .08); color: var(--ink); }
+.tf-card:hover > span[aria-hidden], .ax-card:hover .ax-go { background: var(--gold); color: #0A0B0C; }
+.ax-other { background: transparent; border: 1px dashed rgba(255, 255, 255, .22); }
+.ax-other .ax-ico { background: rgba(201, 166, 107, .12); color: var(--gold); }
+.ax-other:hover { border-color: var(--gold); transform: none; box-shadow: none; }
+
+/* ---------- Approach ---------- */
+.apx { background: linear-gradient(180deg, #050606 0%, #0B0D0E 100%); border-top: 1px solid var(--hairline); }
+.apx-panel { background: none; }
+.apx-eyebrow, .apx-goal-label { color: var(--gold); }
+.apx-lead { color: var(--ink); }
+.apx-text { color: var(--muted); }
+.apx-num { background: var(--gold); color: #0A0B0C; box-shadow: 0 0 0 8px #080A0B; }
+.apx-card { background: var(--surface); border-color: var(--hairline); }
+.apx-card:hover { background: var(--surface-2); border-color: rgba(201, 166, 107, .6); }
+.apx-ico { background: rgba(201, 166, 107, .12); color: var(--gold); }
+.apx-goal-ico { border-color: rgba(201, 166, 107, .5); color: var(--gold); }
+.apx-goal-copy { color: var(--ink-soft); }
+.apx-goal-copy span { color: var(--gold-light); }
+
+/* ---------- Final CTA ---------- */
+body main section.final-cta.cta2 { background: var(--cream); }
+.cta2-card {
+  background:
+    radial-gradient(600px 300px at 90% 50%, rgba(201, 166, 107, .16), transparent 70%),
+    linear-gradient(135deg, #14171A, #0C0E10);
+  border: 1px solid rgba(201, 166, 107, .25);
+  box-shadow: 0 40px 90px -50px rgba(0, 0, 0, .9);
+}
+.cta2-copy p { color: var(--muted); }
+
+/* ---------- Footer / mobile bar ---------- */
+.sf { background: var(--color-footer-bg); border-top: 1px solid var(--hairline); }
+.sf-h { color: var(--gold); }
+.sf-logo img { filter: brightness(1.15); }
+.mobile-action-bar { background: rgba(8, 9, 10, .94); border-top: 1px solid var(--hairline); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+.mobile-action-bar .btn-outline { color: var(--ink); }
+
+/* ---------- Spinal Cord Stimulation page ---------- */
+.scs, .tx-page { background: var(--cream); color: var(--ink); }
+.scs-journey { background: var(--cream-2); }
+.scs-how { background: linear-gradient(to bottom, var(--cream) 0, var(--cream-2) 100%); }
+.scs-hero .scs-sub, .scs-hero .scs-lead, .scs-hero .scs-body, .scs-body, .scs-lead, .scs-sub { color: var(--ink-soft); }
+.scs-journey .scs-stage, .scs-step-card { background: var(--surface); border-color: var(--hairline); color: var(--ink); }
+.scs-stage-tag { background: rgba(201, 166, 107, .14); color: var(--gold-light); }
+.scs-journey .scs-arrow svg { background: var(--surface-2); border-color: var(--hairline); color: var(--gold); }
+.scs-num, .scs-how .scs-num { background: var(--gold); color: #0A0B0C; box-shadow: 0 0 0 8px var(--cream); }
+.scs-how .scs-steps::before { border-left-color: rgba(255, 255, 255, .14); }
+.scs-go { background: rgba(255, 255, 255, .08); color: var(--ink); }
+.scs-journey .scs-stage li::before { background-color: var(--gold); }
+.scs h2, .scs h3, .scs-step-card h3, .scs-stage h3 { color: var(--ink); }
+.scs p, .scs li { color: var(--muted); }
+.scs .scs-hero-copy p, .scs .scs-sub, .scs .scs-lead { color: var(--ink-soft); }
+
+/* ---------- Overrides for late-cascade light surfaces in theme-modern.css ---------- */
+ul.pillars > li:nth-child(n) { background: var(--surface); border-color: var(--hairline); }
+ul.pillars > li:nth-child(n):hover { border-color: rgba(201, 166, 107, .6); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .9); }
+ul.pillars > li svg { background: rgba(201, 166, 107, .12); color: var(--gold); }
+ul.pillars > li:hover svg { background: var(--gold); color: #0A0B0C; }
+ul.pillars > li::after { border-color: rgba(255, 255, 255, .25); }
+ul.pillars > li:hover::after { border-color: var(--gold); }
+
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:hover,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:focus-within {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  box-shadow: 0 30px 60px -40px #000;
+}
+body main .scs-how .scs-steps li:nth-child(n) .scs-num { background: var(--gold); color: #0A0B0C; }
+body main .scs-how .scs-step-card h3, body main .scs-how .scs-step-card h3:not(.x1) { color: var(--ink); }
+body main .scs-how .scs-step-card p { color: var(--muted); }
+.scs-arrow svg, .scs-go { background: var(--surface-2); color: var(--gold); }
