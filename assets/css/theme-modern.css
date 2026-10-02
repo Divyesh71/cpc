@@ -1370,3 +1370,48 @@ html, body { overflow-x: clip; }
   .hero .btn, .scs-actions .btn { padding: 0 20px; font-size: 14.5px; min-height: 50px; white-space: nowrap; }
   .hero-chip { max-width: 300px; }
 }
+
+/* tablet: 5 expertise cards → 3 on top, 2 wider below (no empty slot) */
+@media (min-width: 601px) and (max-width: 1100px) {
+  ul.pillars:not(.pillars-3) { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  ul.pillars:not(.pillars-3) > li:nth-child(-n+3) { grid-column: span 2; }
+  ul.pillars:not(.pillars-3) > li:nth-child(n+4) { grid-column: span 3; }
+}
+
+/* final CTA: soft cream overlay between image and copy so the text stays readable where they meet */
+@media (max-width: 1200px) {
+  .cta2-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, var(--cream-2) 0%, var(--cream-2) 42%, rgba(243, 238, 226, .85) 55%, rgba(243, 238, 226, 0) 78%);
+  }
+}
+@media (max-width: 760px) {
+  .cta2-card::before { background: linear-gradient(180deg, var(--cream-2) 0%, var(--cream-2) 55%, rgba(243, 238, 226, 0) 100%); }
+}
+
+/* =====================================================================
+   RESPONSIVE VERTICAL RHYTHM (tablet / phone)
+   section top/bottom = --sec-pad (64px tablet, 48px phone); strip → next section uses only the next section's padding
+   ===================================================================== */
+.pillars-wrap { padding-bottom: 0; }
+@media (max-width: 960px) {
+  .hero { padding-top: 32px; }
+  body main .scs-hero { padding-top: 32px; }
+  .hero-actions, .scs-actions { margin-top: 28px; }
+  body main #advanced-treatments { padding-top: 56px !important; }
+  .tb-head { margin-bottom: 32px; }
+  .ax-head { margin-bottom: 32px; }
+  /* last strip card: text left-aligned like the others */
+  ul.pillars.pillars-3 > li:nth-child(n) { justify-content: flex-start; text-align: left; }
+}
+@media (max-width: 560px) {
+  :root { --strip-gap: 32px; }
+  body main #advanced-treatments { padding-top: 48px !important; }
+  .tb-head { margin-bottom: 28px; }
+  .apx-layout { gap: 32px; }
+  .final-cta.cta2 .cta2-card { border-radius: 24px; }
+}
