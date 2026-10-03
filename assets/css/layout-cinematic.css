@@ -74,17 +74,14 @@ body main .ax-head .eyebrow { margin-inline: auto; }
 body main .ax-head .section-intro { margin-inline: auto; max-width: 680px; }
 
 /* ============ MAIN PROCEDURES — tall edge-to-edge columns ============ */
-body main .tb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: auto; gap: 18px; }
-body main .tb-feature { grid-column: auto; grid-row: auto; }
-body main .tb-card a { min-height: 640px; border-radius: 30px; }
-body main .tb-card a::after { background: linear-gradient(to top, rgba(5, 6, 6, .96) 0%, rgba(5, 6, 6, .55) 42%, rgba(5, 6, 6, .08) 78%); }
-body main .tb-body, body main .tb-feature .tb-body { padding: 40px 36px; }
-body main .tb-body h3:not(.x1):not(.x2):not(.x3),
-body main .tb-feature .tb-body h3:not(.x1):not(.x2):not(.x3) {
-  font-family: var(--font-serif); font-weight: 500; font-size: clamp(26px, 2.4vw, 36px); letter-spacing: -.015em; line-height: 1.1;
-}
-body main .tb-body p, body main .tb-feature .tb-body p { font-size: 15.5px; max-width: 36ch; }
-body main .tb-card a:hover img { transform: scale(1.07); }
+
+
+
+
+
+
+
+
 
 /* ============ ADDITIONAL — image-led tiles ============ */
 body main .ax-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
@@ -155,8 +152,8 @@ body main .scs-actions { justify-content: center; }
 /* ============ RESPONSIVE ============ */
 @media (max-width: 1100px) {
   body main .ax-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  body main .tb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  body main .tb-card a { min-height: 520px; }
+  
+  
 }
 @media (max-width: 960px) {
   body main .hero { min-height: 0; }
@@ -168,13 +165,13 @@ body main .scs-actions { justify-content: center; }
 }
 @media (max-width: 640px) {
   body main .tb-grid, body main .ax-grid { grid-template-columns: 1fr; }
-  body main .tb-card a { min-height: 440px; }
+  
   body main .ax-card, body main .ax-other { min-height: 380px; }
   body main .hero-actions .btn { width: 100%; }
 }
 
 body main .ax-head > div { text-align: center; display: flex; flex-direction: column; align-items: center; }
-body main .tb-card img[src*="ai-intracept"] { object-position: 78% 50%; }
+
 @media (max-width: 640px) {
   body main ul.pillars > li:nth-child(n) { padding: 12px 12px; gap: 10px; font-size: 13px; min-width: 0; overflow-wrap: anywhere; }
   body main ul.pillars > li svg { width: 16px; height: 16px; padding: 8px; flex: none; }
@@ -204,63 +201,32 @@ body main section.additional .ax-head h2 { text-align: center; }
 
 /* ============ MAIN PROCEDURES — BENTO MOSAIC (7 featured) ============
    12-col mosaic: one hero tile (SCS), two stacked-height companions, a wide banner, then a trio. */
-body main .tb-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: 340px; gap: 16px; counter-reset: tb; }
-body main .tb-card { grid-column: span 4; }
-body main .tb-card:nth-child(1) { grid-column: 1 / span 6; grid-row: span 2; }
-body main .tb-card:nth-child(2) { grid-column: 7 / span 3; }
-body main .tb-card:nth-child(3) { grid-column: 10 / span 3; }
-body main .tb-card:nth-child(4) { grid-column: 7 / span 6; }
-body main .tb-card:nth-child(n+5) { grid-column: span 4; }
-body main .tb-card a { height: 100%; min-height: 0; border-radius: 26px; }
-body main .tb-card:nth-child(4) a::after { background: linear-gradient(to right, rgba(5, 6, 6, .94) 0%, rgba(5, 6, 6, .6) 50%, rgba(5, 6, 6, .1) 100%); }
-body main .tb-card:nth-child(4) .tb-body { top: 0; display: flex; flex-direction: column; justify-content: center; max-width: 62%; }
-body main .tb-body, body main .tb-feature .tb-body { padding: 28px; }
-body main .tb-card:nth-child(1) .tb-body { padding: 44px; }
-body main .tb-card:nth-child(1) .tb-body h3:not(.x1):not(.x2):not(.x3) { font-size: clamp(32px, 3.4vw, 50px); }
-body main .tb-card:nth-child(1) .tb-body p { font-size: 17px; max-width: 42ch; }
-body main .tb-body h3:not(.x1):not(.x2):not(.x3) { font-size: clamp(22px, 1.9vw, 28px); }
-body main .tb-body p { font-size: 14.5px; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* index numeral + category tag */
-body main .tb-num {
-  position: absolute; z-index: 3; top: 20px; right: 24px;
-  font-family: var(--font-serif); font-size: 44px; line-height: 1; letter-spacing: -.02em;
-  color: transparent; -webkit-text-stroke: 1px rgba(201, 166, 107, .7);
-  transition: color .3s ease, -webkit-text-stroke-color .3s ease;
-}
-body main .tb-card:nth-child(1) .tb-num { font-size: 72px; top: 28px; right: 36px; }
-body main .tb-card a:hover .tb-num { color: rgba(201, 166, 107, .85); }
-body main .tb-tag {
-  position: absolute; z-index: 3; top: 22px; left: 24px;
-  padding: 6px 12px; border-radius: 999px;
-  font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--gold);
-  background: rgba(10, 11, 12, .55); border: 1px solid rgba(201, 166, 107, .35);
-  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
-}
-body main .tb-card:nth-child(1) .tb-tag { top: 30px; left: 36px; }
-/* gold hairline that draws in on hover */
-body main .tb-card a::before {
-  content: ""; position: absolute; z-index: 3; left: 0; bottom: 0; height: 3px; width: 0;
-  background: linear-gradient(90deg, var(--gold), transparent); transition: width .5s ease;
-}
-body main .tb-card a:hover::before, body main .tb-card a:focus-visible::before { width: 100%; }
 
-@media (max-width: 760px) {
-  body main .tb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 340px; }
-  body main .tb-card:nth-child(n) { grid-column: auto; grid-row: auto; }
-  body main .tb-card:nth-child(1), body main .tb-card:nth-child(4) { grid-column: 1 / -1; }
-  body main .tb-card:nth-child(7) { grid-column: 1 / -1; }
-  body main .tb-card:nth-child(4) .tb-body { max-width: 70%; }
-}
-@media (max-width: 640px) {
-  body main .tb-grid { grid-template-columns: 1fr; grid-auto-rows: 400px; }
-  body main .tb-card:nth-child(n) { grid-column: auto; }
-  body main .tb-card:nth-child(4) .tb-body { max-width: none; top: auto; display: block; }
-  body main .tb-card:nth-child(4) a::after { background: linear-gradient(to top, rgba(5, 6, 6, .95) 0%, rgba(5, 6, 6, .5) 50%, rgba(5, 6, 6, .1) 100%); }
-  body main .tb-card:nth-child(1) .tb-num { font-size: 52px; right: 24px; }
-  body main .tb-card:nth-child(1) .tb-body { padding: 28px; }
-  body main .tb-card:nth-child(1) .tb-tag { left: 24px; }
-}
+
+
+
+
+/* gold hairline that draws in on hover */
+
+
 
 /* ============ HERO TEXT — fully centred, wider measure ============ */
 body main .hero-copy { max-width: 1040px; width: 100%; text-align: center; display: flex; flex-direction: column; align-items: center; }
@@ -271,15 +237,11 @@ body main .hero-copy .hero-actions { justify-content: center; width: 100%; }
 body main .hero::after { display: none !important; }
 
 /* index numerals removed */
-body main .tb-num { display: none; }
+
 
 /* Minuteman banner: beat theme-modern's ".tb-card:last-child:nth-child(3n+1)" full-width rule, keep button its natural size */
-body main ul.tb-grid li.tb-card:nth-child(4):last-child { grid-column: 7 / span 6; grid-row: auto; }
-body main ul.tb-grid li.tb-card:nth-child(4):last-child a { min-height: 0; }
-body main .tb-card:nth-child(4) .tb-body { align-items: flex-start; }
-@media (max-width: 760px) {
-  body main ul.tb-grid li.tb-card:nth-child(4):last-child { grid-column: 1 / -1; }
-}
+
+
 
 /* ============ LEGIBILITY PASS — text contrast across the site ============ */
 /* primary buttons: bright gold + near-black text everywhere (dark-gold fill on light sections made labels unreadable) */
@@ -297,26 +259,21 @@ body .site-header .btn-primary:hover, .mobile-action-bar .btn-primary:hover {
 body main .btn-primary *, body main .ax-viewall * { color: inherit; }
 
 /* image-card labels: solid dark pill, light-gold text */
-body main .tb-tag {
-  background: rgba(8, 9, 10, .82); border-color: rgba(230, 206, 156, .55);
-  color: #F0DDB0; font-size: 11.5px; font-weight: 700;
-}
+
 /* "Learn more" pills on photo cards: readable at rest and on hover */
-body main .tb-more { background: rgba(8, 9, 10, .72); border-color: rgba(255, 255, 255, .35); color: #fff; font-weight: 700; }
-body main .tb-card a:hover .tb-more, body main .tb-card a:focus-visible .tb-more { background: #F0DDB0; border-color: #F0DDB0; color: #0A0B0C; }
+
+
 /* body copy on photo tiles */
 body main .tb-body p, body main .ax-body p { color: rgba(255, 255, 255, .92); }
-body main .tb-card a::after { background: linear-gradient(to top, rgba(5, 6, 6, .97) 0%, rgba(5, 6, 6, .72) 48%, rgba(5, 6, 6, .1) 85%); }
+
 /* section pills ("Treatments", "Additional Treatments") */
 body main #advanced-treatments .eyebrow { color: #6B4E17; background: rgba(154, 116, 50, .14); border-color: rgba(107, 78, 23, .5); }
-body main .tb-card:nth-child(4) .tb-body { max-width: 52%; }
-@media (max-width: 760px) { body main .tb-card:nth-child(4) .tb-body { max-width: none; } }
 
 /* treatment illustrations (square art) — keep the zoom callout / device in frame */
-body main .tb-card img[src*="/scs.jpg"] { object-position: 50% 30%; }
-body main .tb-card img[src*="/pns.jpg"] { object-position: 50% 40%; }
-body main .tb-card img[src*="/intracept.jpg"] { object-position: 40% 50%; }
-body main .tb-card img[src*="/minuteman.jpg"] { object-position: 50% 62%; }
+
+
+
+
 
 /* ============ ADDITIONAL TREATMENTS — split layout: sticky intro + numbered index rows ============
    Replaces the 4x2 photo tiles (text was small and sat on busy images). Text now sits on solid panels. */
@@ -434,10 +391,10 @@ body main .tbx-btn {
 body main .tbx-btn svg { width: 15px; height: 15px; }
 body main .tbx-lg .tbx-btn { padding: 13px 26px; font-size: 15px; color: #0A0B0C; background: linear-gradient(135deg, #F0DDB0, #D4B079); border-color: #D4B079; }
 body main .tbx-card a:hover .tbx-btn { background: #F0DDB0; border-color: #F0DDB0; color: #0A0B0C; }
-body main .tbx-feats { display: flex; gap: 26px; flex-wrap: wrap; margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, .16); }
-body main .tbx-feats > span { display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; line-height: 1.3; color: rgba(255, 255, 255, .92); }
-body main .tbx-feats i { display: grid; place-items: center; width: 38px; height: 38px; flex: none; border-radius: 50%; color: #E6CE9C; border: 1px solid rgba(230, 206, 156, .55); }
-body main .tbx-feats svg { width: 18px; height: 18px; }
+
+
+
+
 
 @media (max-width: 1100px) {
   body main .tbx-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 360px; }
@@ -448,7 +405,7 @@ body main .tbx-feats svg { width: 18px; height: 18px; }
   body main .tbx-grid { grid-template-columns: 1fr; grid-auto-rows: 400px; }
   body main .tbx-lg { grid-column: auto; }
   body main .tbx-lg .tbx-body { padding: 24px; }
-  body main .tbx-feats { gap: 14px; }
+  
 }
 /* feature card: copy sits low, over a taller dark fade, feature chips pinned at the base */
 body main .tbx-lg .tbx-body { justify-content: flex-start; }
@@ -927,3 +884,118 @@ body .sf .sf-brand p { padding-left: 0; border-left: 0; white-space: normal; fon
   body .sf nav.sf-col { align-self: end; padding-bottom: 24px; }
   body .sf .sf-brand { align-self: end; }
 }
+
+/* =====================================================================
+   COLOUR RHYTHM — black only where it matters; everything else white + gray
+   black : hero · Additional Treatments (highlight) · final CTA · footer
+   white : Advanced Treatments           gray : Our Approach
+   (warm cream / gold washes replaced by neutral white + gray)
+   ===================================================================== */
+#advanced-treatments, #our-approach, body main .pillars-wrap, body main .scs-how {
+  --muted: #5F656C;
+  --surface-2: #F3F4F6;
+  --hairline: rgba(20, 23, 26, .10);
+}
+
+/* Advanced Treatments — clean white */
+body main section.treatments#advanced-treatments { background: #FFFFFF; }
+body main section.treatments#advanced-treatments::before { display: none; }
+body main #advanced-treatments .eyebrow {
+  color: #2C3237; background: #FCFDFF; border-color: #D5D8DC; box-shadow: none;
+}
+
+/* Our Approach — light gray secondary surface */
+body main #our-approach.apx { background: #FCFDFF; border-color: rgba(20, 23, 26, .08); }
+body main #our-approach.apx::before { display: none; }
+body main #our-approach .apx-eyebrow { color: #2C3237; background: #fff; border-color: #D5D8DC; }
+body main #our-approach .apx-card, body main #our-approach .apx-card:hover {
+  background: #fff; border-color: #E1E3E6; box-shadow: 0 30px 60px -46px rgba(20, 23, 26, .3);
+}
+#our-approach .apx-ico { background: #FCFDFF; border-color: #D5D8DC; }
+
+/* SCS page light bands follow the same white / gray palette */
+body main .pillars-wrap { background: #FFFFFF; }
+body main .scs-how { background: #FCFDFF; }
+body main .scs-how .scs-eyebrow { color: #2C3237; background: #fff; border-color: #D5D8DC; }
+
+/* "Explore All Treatments" button: show the arrow */
+body main .tb-head-side .btn { display: inline-flex; align-items: center; gap: 10px; }
+body main .tb-head-side .btn > span[aria-hidden] { display: inline-flex; align-items: center; color: currentColor; }
+body main .tb-head-side .btn svg { display: block; width: 18px; height: 18px; flex: none; stroke: currentColor; fill: none; }
+
+/* Black sections: secondary (outline) button instead of the gold fill */
+body main section.additional a.ax-viewall {
+  background: transparent !important;
+  border: 1.5px solid rgba(255, 255, 255, .4) !important;
+  color: #F3EFE6 !important;
+  box-shadow: none;
+}
+body main section.additional a.ax-viewall:hover, body main section.additional a.ax-viewall:focus-visible {
+  background: rgba(255, 255, 255, .08) !important;
+  border-color: #E6CE9C !important;
+  color: #E6CE9C !important;
+}
+
+/* SCS page: "Trial and Permanent Implantation" — white band */
+body main .scs-journey {
+  --ink: #14171A; --ink-soft: #2C3237; --muted: #5F656C;
+  --gold: #9A7432; --gold-light: #7C5C22;
+  --surface: #FFFFFF; --surface-2: #FCFDFF; --hairline: rgba(20, 23, 26, .10);
+  background: #FFFFFF; color: var(--ink);
+}
+body main .scs-journey h2:not(.x1):not(.x2):not(.x3), body main .scs-journey .scs-stage h3 { color: var(--ink); }
+body main .scs-journey .aw-em { color: var(--gold); }
+body main .scs-journey .scs-journey-sub, body main .scs-journey .scs-stage p, body main .scs-journey .scs-stage li { color: var(--muted); }
+body main .scs-journey .scs-stage { background: #F7F8F9; border: 1px solid #E1E3E6; box-shadow: 0 30px 60px -46px rgba(20, 23, 26, .3); }
+body main .scs-journey .scs-stage-tag { background: #fff; border: 1px solid #D5D8DC; color: #2C3237; }
+body main .scs-journey .scs-arrow svg { background: #fff; border-color: #D5D8DC; color: #2C3237; }
+
+/* =====================================================================
+   SCS PAGE — colour pass only (layout untouched)
+   "How Does SCS Work?" = gray band · "Trial and Permanent Implantation" = white band
+   ===================================================================== */
+body main .scs-how { background: #FCFDFF; }
+body main .scs-how h2:not(.x1):not(.x2):not(.x3) { color: #14171A; }
+body main .scs-how .aw-em { color: #9A7432; }
+body main .scs-how .scs-how-intro { color: #5F656C; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { background: #fff; border-color: #E1E3E6; box-shadow: 0 30px 60px -46px rgba(20, 23, 26, .3); }
+body main .scs-how .scs-step-card h3, body main .scs-how .scs-step-card h3:not(.x1) { color: #14171A; }
+body main .scs-how .scs-step-card p { color: #5F656C; }
+body main .scs-how .scs-steps li:nth-child(n) .scs-num { background: #0B0D0E; color: #F0DDB0; -webkit-text-stroke: 0; box-shadow: 0 0 0 5px rgba(255, 255, 255, .9); }
+
+body main .scs-journey { background: #FFFFFF; }
+body main .scs-journey .scs-head-center h2:not(.x1):not(.x2):not(.x3) { color: #14171A; }
+body main .scs-journey .scs-head-center h2 .aw-em { color: #9A7432; }
+body main .scs-journey .scs-journey-sub { color: #5F656C; }
+body main .scs-journey .scs-stage { background: #F7F8F9; border: 1px solid #E1E3E6; box-shadow: 0 30px 60px -46px rgba(20, 23, 26, .3); }
+body main .scs-journey .scs-stage h3:not(.x1):not(.x2):not(.x3) { color: #14171A; }
+body main .scs-journey .scs-stage p, body main .scs-journey .scs-stage li { color: #5F656C; }
+body main .scs-journey .scs-stage li::before { background-color: #9A7432; }
+body main .scs-journey .scs-stage .scs-stage-tag { background: #0B0D0E; border: 0; color: #F0DDB0; }
+body main .scs-journey .scs-arrow svg { background: #0B0D0E; border: 0; color: #F0DDB0; }
+
+/* SCS page: no divider line between the bands */
+body main .scs-how, body main .scs-journey { border: 0; }
+
+/* Final CTA: same container width as the other sections */
+body main section.final-cta.cta2 > .container { max-width: 1440px; padding-inline: 15px; }
+/* SCS "Who may be a candidate": second paragraph gets its own row (was overlapping the first) */
+body main .cta2-cand .cta2-card { grid-template-rows: auto auto auto; }
+body main .cta2-cand .cta2-copy p:nth-of-type(1) { grid-row: 2; }
+body main .cta2-cand .cta2-copy p:nth-of-type(2) { position: relative; z-index: 2; grid-column: 1; grid-row: 3; align-self: start; margin-top: 14px; }
+body main .cta2-cand .cta2-card .cta-actions { grid-row: 1 / span 3; }
+
+/* Gold buttons: no gradient→white swap on hover (gradients can't transition, which made them blink).
+   Keep the gradient and animate brightness / lift / glow instead. */
+body main .btn-primary, body main a.btn-primary, body main .cta2-primary, body .site-header .btn-primary, .mobile-action-bar .btn-primary {
+  transition: filter .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+body main .btn-primary:hover, body main .btn-primary:focus-visible, body main .cta2-primary:hover, body main .cta2-primary:focus-visible,
+body main .cta2-card .cta2-primary:hover, body .site-header .btn-primary:hover, .site-header .btn-primary:hover, .mobile-action-bar .btn-primary:hover {
+  background: linear-gradient(135deg, #F0DDB0, #D4B079) !important;
+  border-color: #D4B079 !important;
+  color: #0A0B0C !important;
+  filter: brightness(1.07) saturate(1.05);
+  box-shadow: 0 14px 34px -12px rgba(212, 176, 121, .65);
+}
+body main .cta2-card .cta2-primary:hover { background: linear-gradient(135deg, #F3E3BC, #D4B079) !important; border: 0 !important; }

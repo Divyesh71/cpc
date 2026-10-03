@@ -131,11 +131,11 @@ body .site-header .icon-btn:hover { background: rgba(255, 255, 255, .08); }
 .additional, body main section.additional { background: var(--cream-2); border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); }
 .hero-intro, .section-intro, .tf-text p, .ax-body p, .apx-card p { color: var(--muted); }
 
-.tb-card a { background: var(--surface); border: 1px solid rgba(255, 255, 255, .08); }
-.tb-card a::after { background: linear-gradient(to top, rgba(5, 6, 6, .94) 0%, rgba(5, 6, 6, .6) 40%, rgba(5, 6, 6, 0) 72%); }
-.tb-card a:hover { border-color: rgba(201, 166, 107, .55); }
-.tb-more { background: rgba(255, 255, 255, .12); border: 1px solid rgba(255, 255, 255, .16); }
-.tb-card a:hover .tb-more, .tb-card a:focus-visible .tb-more { background: var(--gold); border-color: var(--gold); color: #0A0B0C; }
+
+
+
+
+
 
 .tf-card, .ax-card {
   background: var(--surface);
@@ -230,7 +230,7 @@ body main .scs-how .scs-step-card p { color: var(--muted); }
   opacity: .9;
 }
 .cta2-card { overflow: hidden; }
-.tb-feature img { object-position: 50% 40%; }
+
 .hero-media img { object-position: 50% 30%; }
 .scs-hero-img img { object-fit: cover; object-position: 50% 30%; }
 .ax-img img, .scs-step-card img, .scs-stage-img { object-fit: cover; }

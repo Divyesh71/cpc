@@ -201,21 +201,21 @@ body .site-header :focus-visible, :focus-visible {
 #advanced-treatments::before { display: none; }
 .additional, body main section.additional { background: var(--cream-2); }
 
-.tf-visual, .tf-visual img { border-radius: var(--r-card); }
+
 .tf-card, .ax-card {
   background: #fff;
   border: 1px solid var(--hairline);
   border-radius: var(--r-card);
   box-shadow: none;
 }
-.tf-card { padding: 14px 18px 14px 14px; }
+
 .tf-card:hover, .tf-card:focus-visible,
 .ax-card:hover, .ax-card:focus-visible {
   border-color: var(--ink);
   box-shadow: 0 24px 48px -30px rgba(var(--rgb-shadow), .45);
 }
 .ax-card:hover, .ax-card:focus-visible { transform: translateY(-5px); }
-.tf-thumb { border-radius: 16px; background: var(--navy-soft); }
+
 .ax-img { border-radius: var(--r-card) var(--r-card) 0 0; aspect-ratio: 16 / 9.5; }
 .ax-body { padding: 20px 24px 0; }
 .ax-card { padding-bottom: 64px; }
@@ -318,7 +318,7 @@ body main section.final-cta.cta2 { background: var(--cream); padding-top: 0; }
 
 /* ================= Fixes ================= */
 /* hover shift was clipped by the overflow-hidden panel → no sideways movement */
-.tf-card:hover, .tf-card:focus-visible { transform: none; }
+
 
 /* SCS page spacing: how-it-works already pads its bottom, so don't double up before the journey section */
 body main .scs-journey { padding-top: var(--sec-pad) !important; }
@@ -373,61 +373,22 @@ body main .hero h1:not(.x1):not(.x2):not(.x3) { font-size: clamp(2.4rem, 1.3rem 
 .tb-head h2 { margin: 0; max-width: 14ch; }
 .tb-head-side .section-intro { margin: 0 0 24px; }
 
-.tb-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: minmax(300px, auto);
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.tb-feature { grid-column: span 2; grid-row: span 2; }
-.tb-card a {
-  position: relative;
-  display: block;
-  height: 100%;
-  min-height: inherit;
-  border-radius: 28px;
-  overflow: hidden;
-  color: #fff;
-  text-decoration: none;
-  background: var(--navy-soft);
-  isolation: isolate;
-}
-.tb-card a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top, rgba(18, 26, 22, .9) 0%, rgba(18, 26, 22, .55) 38%, rgba(18, 26, 22, 0) 70%);
-  transition: opacity .3s;
-}
-.tb-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-.tb-feature img { object-position: 30% 50%; }
-.tb-card a:hover img, .tb-card a:focus-visible img { transform: scale(1.05); }
-.tb-body { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; display: block; padding: 28px; }
-body main .tb-body h3:not(.x1):not(.x2):not(.x3) { color: #fff; font-size: 21px; font-weight: 600; margin: 0 0 8px; }
-.tb-body p { margin: 0; max-width: 46ch; font-size: 14.5px; line-height: 1.55; color: rgba(255, 255, 255, .84); }
-.tb-feature .tb-body { padding: 44px; }
-body main .tb-feature .tb-body h3:not(.x1):not(.x2):not(.x3) { font-family: var(--font-serif); font-weight: 500; font-size: clamp(30px, 3vw, 42px); letter-spacing: -.02em; line-height: 1.1; }
-.tb-feature .tb-body p { font-size: 16.5px; }
-.tb-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 9px 16px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, .16);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  font-size: 13.5px;
-  font-weight: 600;
-  transition: background-color .2s, color .2s;
-}
-.tb-more svg { width: 15px; height: 15px; }
-.tb-card a:hover .tb-more, .tb-card a:focus-visible .tb-more { background: #fff; color: var(--ink); }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ---------- Additional treatments: inset images ---------- */
 .ax-card { padding: 12px 12px 64px; }
@@ -472,9 +433,9 @@ body main .final-cta.cta2:not(.cta2-cand) { padding-top: var(--sec-pad) !importa
   .pillars { margin-top: 56px; }
   .tb-head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 36px; }
   .tb-head h2 { max-width: none; }
-  .tb-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: minmax(280px, auto); }
-  .tb-feature { grid-column: span 2; grid-row: span 1; min-height: 420px; }
-  .tb-feature .tb-body { padding: 32px; }
+  
+  
+  
   .apx-layout { gap: 40px; }
   .apx-panel { position: static; }
 }
@@ -486,16 +447,16 @@ body main .final-cta.cta2:not(.cta2-cand) { padding-top: var(--sec-pad) !importa
   .pillars li:nth-child(even) { border-left: 1px solid var(--hairline); }
   .pillars li:nth-child(n+3) { border-top: 1px solid var(--hairline); }
   .pillars li:last-child { grid-column: span 2; border-left: 0; }
-  .tb-grid { grid-template-columns: 1fr; }
-  .tb-feature { grid-column: auto; min-height: 400px; }
-  .tb-body, .tb-feature .tb-body { padding: 24px; }
+  
+  
+  
   .hero-actions .btn { width: 100%; }
 }
 
 /* bento polish: roomier small cards + stronger scrim so text stays legible over busy imagery */
-.tb-grid { grid-auto-rows: minmax(340px, auto); }
-.tb-card a::after { background: linear-gradient(to top, rgba(18, 26, 22, .94) 0%, rgba(18, 26, 22, .7) 45%, rgba(18, 26, 22, 0) 85%); }
-@media (max-width: 960px) { .tb-grid { grid-auto-rows: minmax(340px, auto); } }
+
+
+
 
 /* ---------- SCS hero: keep copy legible where it meets the image ---------- */
 .scs-hero-img img {
@@ -668,12 +629,7 @@ body main .scs-journey .scs-stage h3:not(.x1):not(.x2):not(.x3) { color: #fff; f
 }
 
 /* bento: never leave an orphaned card with empty space beside it */
-@media (min-width: 961px) {
-  .tb-card:last-child:nth-child(3n+1):not(.tb-feature) { grid-column: 1 / -1; }
-  .tb-card:last-child:nth-child(3n+2) { grid-column: span 2; }
-  .tb-card:last-child:nth-child(3n+1):not(.tb-feature) img { object-position: 50% 40%; }
-  .tb-card:last-child:nth-child(3n+1):not(.tb-feature) a { min-height: 300px; }
-}
+
 
 /* SCS hero crop: keep the magnified-spine circle fully inside the frame */
 @media (min-width: 961px) { .scs-hero-img img { object-position: 93% center; } }
@@ -819,7 +775,7 @@ body main .final-cta.cta2-cand { padding-top: var(--sec-pad) !important; }
   line-clamp: 3;
   overflow: hidden;
 }
-.tb-feature .tb-body p { -webkit-line-clamp: 2; line-clamp: 2; }
+
 
 /* =====================================================================
    HOW IT WORKS v3 — crisp, zig-zag step rows
@@ -1104,7 +1060,7 @@ body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { flex: 1; }
    The spine illustration is now its own visible image (not a faded background under the text).
    ===================================================================== */
 .scs-how::before, .scs-how::after { display: none; }
-.scs-how-media { display: none; margin: 0; }
+
 
 @media (min-width: 1201px) {
   body main .scs-how .scs-how-grid { grid-template-columns: minmax(0, 4.4fr) minmax(0, 3.2fr) minmax(0, 6.2fr); gap: 24px; align-items: center; }
@@ -1112,25 +1068,8 @@ body main .scs-how .scs-steps li:nth-child(n) .scs-step-card { flex: 1; }
   body main .scs-how .scs-how-copy h2:not(.x1):not(.x2):not(.x3) { font-size: clamp(3rem, 1.6rem + 3vw, 4.6rem); }
   body main .scs-how .scs-how-intro { max-width: 28ch; }
 
-  .scs-how-media {
-    display: block;
-    grid-column: 2;
-    position: relative;
-    height: 560px;
-    overflow: hidden;
-    border-radius: 36px;
-  }
-  .scs-how-media img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 41% center;   /* centre on the spine + stimulator */
-    mix-blend-mode: multiply;      /* white of the artwork melts into the cream background */
-    -webkit-mask-image: radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%);
-    mask-image: radial-gradient(ellipse 78% 82% at 50% 50%, #000 55%, transparent 100%);
-  }
+  
+  
 
   /* cards: stacked, wide, horizontal */
   body main .scs-how .scs-steps { grid-column: 3; grid-template-columns: 1fr; gap: 20px; }
