@@ -362,3 +362,97 @@ body main section.additional .ax-head .eyebrow::before, .tf-intro .eyebrow::befo
   .hero .eyebrow, .treatments .eyebrow, .additional .eyebrow, .scs-eyebrow, .apx-eyebrow { letter-spacing: .14em; font-size: 11px; padding: 8px 14px 8px 12px; }
 }
 body main .hero .eyebrow, body main .treatments .eyebrow, body main .additional .eyebrow, body main .scs-eyebrow, body main .apx-eyebrow { color: var(--gold-light); }
+
+/* =====================================================================
+   LIGHT BANDS — alternating white sections between the dark ones
+   (rasoulispine.com rhythm: dark hero → white content → dark → white → dark footer)
+   Scoped token override: everything inside re-resolves to dark-on-white.
+   ===================================================================== */
+#advanced-treatments, #our-approach {
+  --ink: #14171A;
+  --ink-soft: #2C3237;
+  --muted: #5B6168;
+  --gold: #9A7432;                      /* deeper gold keeps AA contrast on white */
+  --gold-light: #7C5C22;
+  --surface: #FFFFFF;
+  --surface-2: #F4F1EA;
+  --hairline: rgba(20, 23, 26, .12);
+  color: var(--ink);
+  background: #FBFAF7;
+}
+#advanced-treatments { border-top: 0; }
+
+/* pill label on white */
+#advanced-treatments .eyebrow, #our-approach .apx-eyebrow {
+  color: var(--gold-light);
+  background: rgba(154, 116, 50, .08);
+  border-color: rgba(154, 116, 50, .35);
+  box-shadow: none;
+}
+#advanced-treatments .eyebrow::before, #our-approach .apx-eyebrow::before {
+  background: var(--gold); box-shadow: 0 0 0 4px rgba(154, 116, 50, .15);
+}
+#advanced-treatments .section-intro { color: var(--muted); }
+#advanced-treatments .btn-primary { color: #0A0B0C; }
+
+/* ---------- Our Approach on white ---------- */
+body main #our-approach.apx {
+  background: #F6F3EC;
+  border-color: var(--hairline);
+}
+body main #our-approach.apx::before { background: radial-gradient(700px 420px at 12% 20%, rgba(154, 116, 50, .10), transparent 70%); }
+body main #our-approach .apx-panel h2:not(.x1):not(.x2):not(.x3) { color: var(--ink); }
+#our-approach .apx-panel h2 span { color: var(--gold); }
+#our-approach .apx-lead { color: var(--ink); }
+#our-approach .apx-text { color: var(--muted); }
+#our-approach .apx-goal {
+  background: #fff; border-color: rgba(154, 116, 50, .3);
+  box-shadow: 0 24px 50px -34px rgba(20, 23, 26, .35);
+}
+#our-approach .apx-goal-label { color: var(--gold); }
+#our-approach .apx-goal-copy { color: var(--ink-soft); }
+#our-approach .apx-goal-copy span { color: var(--gold-light); }
+#our-approach .apx-goal-ico { border-color: rgba(154, 116, 50, .5); color: var(--gold); }
+#our-approach .apx-steps {
+  background: #fff; border-color: var(--hairline);
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+  box-shadow: 0 40px 80px -50px rgba(20, 23, 26, .4);
+}
+#our-approach .apx-step + .apx-step { border-top-color: var(--hairline); }
+body main #our-approach .apx-card h3:not(.x1):not(.x2):not(.x3) { color: var(--ink); }
+#our-approach .apx-card p { color: var(--muted); }
+#our-approach .apx-ico { color: var(--gold); border-color: rgba(154, 116, 50, .4); background: rgba(154, 116, 50, .06); }
+
+/* ---------- SCS page: white band (at-a-glance strip + How It Works) ---------- */
+body main .pillars-wrap, body main .scs-how {
+  --ink: #14171A;
+  --ink-soft: #2C3237;
+  --muted: #5B6168;
+  --gold: #9A7432;
+  --gold-light: #7C5C22;
+  --cream: #FBFAF7;
+  --surface: #FFFFFF;
+  --surface-2: #F4F1EA;
+  --hairline: rgba(20, 23, 26, .12);
+  color: var(--ink);
+}
+body main .pillars-wrap { max-width: none; padding: 72px 15px 0; background: #FBFAF7; }
+body main .pillars-wrap .pillars { max-width: 1410px; margin-inline: auto; }
+body main .pillars-wrap ul.pillars > li:nth-child(n) {
+  background: #fff; border-color: var(--hairline); color: var(--ink);
+  -webkit-backdrop-filter: none; backdrop-filter: none;
+}
+body main .pillars-wrap ul.pillars > li svg { background: rgba(154, 116, 50, .1); color: var(--gold); }
+body main .scs-how { background: #FBFAF7; border-bottom: 1px solid var(--hairline); }
+body main .scs-how .scs-eyebrow { color: var(--gold-light); background: rgba(154, 116, 50, .08); border-color: rgba(154, 116, 50, .35); box-shadow: none; }
+body main .scs-how .scs-eyebrow::before { background: var(--gold); box-shadow: 0 0 0 4px rgba(154, 116, 50, .15); }
+body main .scs-how h2:not(.x1):not(.x2):not(.x3) { color: var(--ink); }
+body main .scs-how .aw-em { color: var(--gold); }
+body main .scs-how .scs-how-intro { color: var(--muted); }
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card,
+body main .scs-how .scs-steps li:nth-child(n) .scs-step-card:hover {
+  background: #fff; border-color: var(--hairline); box-shadow: 0 30px 60px -44px rgba(20, 23, 26, .45);
+}
+body main .scs-how .scs-step-card h3, body main .scs-how .scs-step-card h3:not(.x1) { color: var(--ink); }
+body main .scs-how .scs-step-card p { color: var(--muted); }
+body main .scs-how .scs-go { background: rgba(20, 23, 26, .06); color: var(--ink); }
