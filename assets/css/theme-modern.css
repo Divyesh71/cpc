@@ -9,9 +9,9 @@
 
 :root {
   /* ---- palette ---- */
-  --cream: #FBF8F1;
-  --cream-2: #F3EEE2;
-  --cream-3: #E9E2D1;
+  --cream: #FAFBFC;
+  --cream-2: #EFF3F5;
+  --cream-3: #E1E7EA;
   --ink: #1E2923;
   --ink-soft: #3B4741;
   --muted: #5E6A63;
@@ -41,7 +41,7 @@
   --bg-sky: var(--cream-2);
   --bg-tint: var(--cream-2);
   --border: var(--cream-3);
-  --hairline: #E6DFCE;
+  --hairline: #DFE5E8;
   --ink-dark: #121A16;
   --navy-soft: #26332B;
   --navy: var(--ink);
@@ -53,16 +53,16 @@
   --c-25c6e0: var(--color-primary);
   --c-8fd0ea: #C9D8C2;
   --c-a9d3ea: #CBD6C3;
-  --c-bcdcef: #D6CFBC;
-  --c-bfdcec: #D6CFBC;
+  --c-bcdcef: #CFD8DC;
+  --c-bfdcec: #CFD8DC;
   --c-bfe6ee: #CBD6C3;
   --c-bfe6f2: #CBD6C3;
-  --c-c9d6db: #D6CFBC;
-  --c-d2eaf4: #E6DFCE;
-  --c-d3e6f3: #E6DFCE;
-  --c-dcebf4: #E6DFCE;
-  --c-ddeef6: #E6DFCE;
-  --c-e1eef0: #E6DFCE;
+  --c-c9d6db: #CFD8DC;
+  --c-d2eaf4: #DFE5E8;
+  --c-d3e6f3: #DFE5E8;
+  --c-dcebf4: #DFE5E8;
+  --c-ddeef6: #DFE5E8;
+  --c-e1eef0: #DFE5E8;
   --c-e6f6fc: var(--brand-tint);
   --c-e8f3fa: var(--cream-2);
   --c-eaf4fa: var(--cream-2);
@@ -80,7 +80,7 @@
   --shadow-lift: 0 24px 60px -28px rgba(var(--rgb-shadow), .28), 0 2px 8px rgba(var(--rgb-shadow), .05);
 
   /* ---- type ---- */
-  --font-serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-serif: "PT Serif", Georgia, "Times New Roman", serif;
   --fs-h1: clamp(2.6rem, 1.6rem + 3.6vw, 4.6rem);
   --fs-h2: clamp(2.1rem, 1.5rem + 2.2vw, 3.3rem);
 
@@ -107,7 +107,7 @@ body main h2:not(.x1):not(.x2):not(.x3),
 .cta2-copy h2 {
   font-family: var(--font-serif);
   font-weight: 500;
-  letter-spacing: -.025em;
+  letter-spacing: -.01em;
   line-height: 1.06;
   color: var(--ink);
 }
