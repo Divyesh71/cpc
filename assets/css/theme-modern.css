@@ -12,26 +12,26 @@
   --cream: #FAFBFC;
   --cream-2: #EFF3F5;
   --cream-3: #E1E7EA;
-  --ink: #1E2923;
+  --ink: #1B1F22;
   --ink-soft: #3B4741;
   --muted: #5E6A63;
 
-  --color-primary: #2E6B3C;          /* logo green, deepened for AA contrast with white text */
-  --color-primary-hover: #245631;
-  --color-primary-line: #2E6B3C;
+  --color-primary: #3A4047;          /* logo green, deepened for AA contrast with white text */
+  --color-primary-hover: #3A4047;
+  --color-primary-line: #3A4047;
   --color-primary-rgb: 46, 107, 60;
-  --brand: #A9CBA0;                  /* light sage — accents on dark surfaces */
-  --brand-dark: #2E6B3C;
-  --brand-tint: #E8F0E3;
-  --brand-ink: #2E6B3C;
+  --brand: #D5D8DC;                  /* light sage — accents on dark surfaces */
+  --brand-dark: #3A4047;
+  --brand-tint: #F3F4F6;
+  --brand-ink: #3A4047;
   --brand-deep: var(--ink);
   --teal: var(--color-primary);
-  --gold: #B97D3B;                   /* logo orange, muted */
-  --sky: #2FA3DD;                    /* logo blue ring — used sparingly */
+  --gold: #5F656C;                   /* logo orange, muted */
+  --sky: #8D949B;                    /* logo blue ring — used sparingly */
 
   --color-footer-bg: #18211C;
   --color-header-bg: var(--ink);
-  --blue-deep: #2A3B31;
+  --blue-deep: #2C3237;
   --cyan: var(--brand);
   --cyan-dark: var(--color-primary);
   --cyan-light: var(--brand);
@@ -52,11 +52,11 @@
   /* hard-coded light blues in style.css → warm neutrals */
   --c-25c6e0: var(--color-primary);
   --c-8fd0ea: #C9D8C2;
-  --c-a9d3ea: #CBD6C3;
+  --c-a9d3ea: #D5D8DC;
   --c-bcdcef: #CFD8DC;
   --c-bfdcec: #CFD8DC;
-  --c-bfe6ee: #CBD6C3;
-  --c-bfe6f2: #CBD6C3;
+  --c-bfe6ee: #D5D8DC;
+  --c-bfe6f2: #D5D8DC;
   --c-c9d6db: #CFD8DC;
   --c-d2eaf4: #DFE5E8;
   --c-d3e6f3: #DFE5E8;
@@ -237,7 +237,7 @@ body .site-header :focus-visible, :focus-visible {
 .apx-panel {
   border-radius: 32px;
   padding: 56px 48px;
-  background: linear-gradient(160deg, #1E2923 0%, #2A3B31 100%);
+  background: linear-gradient(160deg, #1B1F22 0%, #2C3237 100%);
 }
 .apx-panel::after { background: radial-gradient(circle, rgba(169, 203, 160, .22), transparent 68%); }
 .apx-eyebrow, .apx-goal-label { color: var(--brand); }
