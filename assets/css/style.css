@@ -2287,6 +2287,7 @@ body main .tb-feature .tb-body h3:not(.x1):not(.x2):not(.x3) {
 .tb-more svg {
   width: 15px;
   height: 15px;
+  flex-shrink: 0;
 }
 
 .tb-card a:hover .tb-more {
@@ -4528,6 +4529,12 @@ body main :focus-visible {
     overflow: hidden;
     transition: max-height .5s ease, opacity .35s ease, transform .45s ease, margin .4s ease;
   }
+  /* let the arrow slide right without being clipped */
+  .tb-more {
+    overflow: visible;
+    -webkit-clip-path: inset(0 -12px 0 0);
+    clip-path: inset(0 -12px 0 0);
+  }
   .tb-card a:hover .tb-body p,
   .tb-card a:focus-visible .tb-body p {
     max-height: 120px;
@@ -4557,3 +4564,26 @@ body main :focus-visible {
 
 /* SCS feature card: portrait crop keeps patient and doctor in frame */
 .tb-feature img[src*="scs-card-consult"] { object-fit: cover; object-position: 62% 50%; }
+
+.btn-arrow::after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 8h12M9 3l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 8h12M9 3l5 5-5 5'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform .2s;
+}
+
+.btn-arrow:hover::after {
+  transform: translateX(3px);
+}
+
+.btn-phone::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
