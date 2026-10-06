@@ -35,7 +35,7 @@
       '<div class="container sf-grid">' +
         '<div class="sf-brand">' +
           '<a class="sf-logo" href="' + u('index.html') + '"><img src="' + u('assets/images/logo.png') + '" width="410" height="94" alt="California Pain Consultants" loading="lazy"></a>' +
-          '<p>Advanced Interventional Pain Medicine</p>' +
+          '<p class="sf-desc">California Pain Consultants provides comprehensive interventional pain care focused on reducing symptoms, restoring function and helping patients return to the activities that matter most.</p>' +
         '</div>' +
         '<nav class="sf-col" aria-label="Quick links">' +
           '<h2 class="sf-h">Quick Links</h2>' +
@@ -44,12 +44,22 @@
         '<div class="sf-col">' +
           '<h2 class="sf-h">Contact Information</h2>' +
           '<address><a href="tel:+15594784757">(559) 478-4757</a><br>7255 N Cedar Ave #101<br>Fresno, CA 93720</address>' +
-          '<h2 class="sf-h sf-h-gap">Office Hours</h2>' +
-          '<p>Please call the office for current hours.</p>' +
+          '<h2 class="sf-h sf-h-gap">Location</h2>' +
+          '<div class="sf-map">' +
+            '<iframe title="Map showing California Pain Consultants, 7255 N Cedar Ave #101, Fresno, CA" src="https://www.google.com/maps?q=7255+N+Cedar+Ave+%23101+Fresno+CA+93720&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+          '</div>' +
         '</div>' +
-        '<div class="sf-col sf-map">' +
-          '<h2 class="sf-h">Location</h2>' +
-          '<iframe title="Map showing California Pain Consultants, 7255 N Cedar Ave #101, Fresno, CA" src="https://www.google.com/maps?q=7255+N+Cedar+Ave+%23101+Fresno+CA+93720&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+        '<div class="sf-col">' +
+          '<h2 class="sf-h">Office Hours</h2>' +
+          '<ul class="sf-hours">' +
+            '<li><span>Monday</span><span>8 AM–5 PM</span></li>' +
+            '<li><span>Tuesday</span><span>8 AM–5 PM</span></li>' +
+            '<li><span>Wednesday</span><span>8 AM–5 PM</span></li>' +
+            '<li><span>Thursday</span><span>8 AM–5 PM</span></li>' +
+            '<li><span>Friday</span><span>8 AM–5 PM</span></li>' +
+            '<li><span>Saturday</span><span>Closed</span></li>' +
+            '<li><span>Sunday</span><span>Closed</span></li>' +
+          '</ul>' +
         '</div>' +
       '</div>' +
     '</div>' +
