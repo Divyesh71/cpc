@@ -215,3 +215,27 @@
 
   buildDots(); render(); restart();
 })();
+
+/* Meet The Doctor: count-up stats (starts from 0 when the section scrolls into view) */
+(function () {
+  var list = document.querySelector('.doc-stats');
+  if (!list || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = list.querySelectorAll('[data-count]');
+  els.forEach(function (el) { el.textContent = '0'; });
+  function run(el) {
+    var end = +el.getAttribute('data-count'), t0 = null, dur = 1800;
+    function step(t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(end * e).toLocaleString('en-US');
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var io = new IntersectionObserver(function (en) {
+    if (!en[0].isIntersecting) return;
+    els.forEach(run);
+    io.disconnect();
+  }, { threshold: 0.4 });
+  io.observe(list);
+})();
