@@ -133,12 +133,6 @@ ul,
   width: 100%;
 }
 
-.site-header :focus-visible,
-.final-cta :focus-visible {
-  outline-color: var(--teal);
-  box-shadow: none;
-}
-
 .btn,
 .nav-link {
   text-transform: none;
@@ -518,10 +512,7 @@ ul,
   transform: translateX(3px);
 }
 
-.site-header :focus-visible {
-  outline-color: var(--brand);
-  box-shadow: 0 0 0 5px rgba(var(--rgb-cyan), .22);
-}
+
 
 .hero::after {
   inset: auto 0 0 0;
@@ -554,19 +545,7 @@ ul,
   gap: 14px;
 }
 
-.hero .eyebrow::before,
-.apx-eyebrow::before,
-.scs-eyebrow::before {
-  content: "";
-  height: 2px;
-  background: var(--brand);
-  border-radius: 2px;
-}
 
-.hero .eyebrow::before,
-.apx-eyebrow::before {
-  width: 40px;
-}
 
 .hero h1 {
   color: var(--ink);
@@ -634,10 +613,6 @@ ul,
   color: var(--white);
 }
 
-.site-header :focus-visible {
-  outline-color: var(--brand);
-  box-shadow: 0 0 0 5px rgba(var(--rgb-cyan), .3);
-}
 
 .btn,
 .site-header .btn,
@@ -647,7 +622,6 @@ ul,
 }
 
 .btn:hover,
-.btn:focus-visible,
 .site-header .btn:hover,
 .hero .btn:hover {
   box-shadow: none !important;
@@ -732,8 +706,7 @@ ul,
   transition: color .2s ease;
 }
 
-.sf-col a:hover,
-.sf-col a:focus-visible {
+.sf-col a:hover {
   color: var(--white);
 }
 
@@ -789,8 +762,7 @@ ul,
   opacity: 1;
 }
 
-.sf-bottom a:hover,
-.sf-bottom a:focus-visible {
+.sf-bottom a:hover {
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 4px;
@@ -1372,8 +1344,7 @@ body main :is(.section, .treatments, .additional, .final-cta, .scs-section, .scs
   transition: border-color .2s, box-shadow .2s, transform .2s;
 }
 
-.tf-card:hover,
-.tf-card:focus-visible {
+.tf-card:hover {
   border-color: var(--c-bfe6ee);
   box-shadow: 0 14px 28px -20px rgba(var(--rgb-shadow), .5);
   transform: translateX(3px);
@@ -1422,23 +1393,18 @@ body main :is(.section, .treatments, .additional, .final-cta, .scs-section, .scs
 }
 
 body main section.additional .ax-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 32px;
-  margin-bottom: 40px;
+     display: flex;
+    gap: 72px;
+    align-items: end;
+    margin-bottom: 56px;
+    justify-content: space-between;
 }
 
-body main section.additional .ax-head .eyebrow::before {
-  content: "";
-  height: 2px;
-  width: 28px;
-  background: var(--gold);
-}
+
 
 body main section.additional .ax-head .section-intro {
   margin: 0;
-  max-width: 54ch;
+  max-width: 64ch;
 }
 
 .ax-viewall,
@@ -1492,11 +1458,9 @@ body main section.additional .ax-head .section-intro {
   border: 1px solid var(--hairline);
   box-shadow: 0 1px 2px rgba(var(--rgb-ink), .04), 0 16px 30px -24px rgba(var(--rgb-ink), .4);
   transition: transform .25s, box-shadow .25s, border-color .25s;
-  padding: 0 0 52px;
 }
 
-.ax-card:hover,
-.ax-card:focus-visible {
+.ax-card:hover{
   transform: translateY(-4px);
   border-color: var(--c-bcdcef);
   box-shadow: 0 22px 40px -24px rgba(var(--rgb-ink), .5);
@@ -1653,10 +1617,7 @@ body .site-header .btn-outline:hover {
   color: var(--ink);
 }
 
-body .site-header :focus-visible {
-  outline-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), .25);
-}
+
 
 body .site-header .menu-list {
   background: transparent;
@@ -2526,7 +2487,7 @@ body main .apx-card h3 {
     height: 52px;
   }
 
-  body main section.additional .ax-head {
+  body main section.additional .ax-head ,.tb-head{
     flex-direction: column;
     gap: 22px;
   }
